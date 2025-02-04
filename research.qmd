@@ -1,0 +1,21 @@
+---
+title: "Research"
+---
+
+# Work in Progress
+
+**The Excess Sensitivity of Consumption to Sentiments: Does the PIH hold for India?** [[Slides](./presentation.pdf)]
+
+This is a joint work with Dr. Siddhartha Chattopadhyay of IIT Kharagpur and Dr. Sohini Sahu of IIT Kanpur. This paper was presented at the *19th Annual Conference at ISI Delhi*.
+
+
+# Publications
+
+- Mani, N., Mishra, A. K., & Pandikasala, J. (2023). How serious is India’s nonperforming assets crisis? A structural satellite version of the financial-macroeconometric model. *Asia-Pacific Financial Markets, 30*(4), 761–794. https://doi.org/10.1007/s10690-023-09397-9  
+- Jijin, P., Mishra, A. K., & Nithin, M. (2022). Macroeconomic determinants of remittances to India. *Economic Change and Restructuring, 55*(2), 1229–1248.  
+- Pandikasala, J., Vyas, I., & Mani, N. (2022). Do financial development drive remittances?  
+- Nithin, M., Jijin, P., & Baiju, P. (2018). Has demonetisation pushed digitalisation in India? Some counter evidences. *Journal of Business Thought, 9*, 58–69. https://doi.org/10.18311/jbt/2018/21170  
+
+# Research Interests
+
+Consumption Dynamics, Consumption Heterogeneity, Fiscal and Monetary Issues
