@@ -9,11 +9,9 @@ website:
       - text: CV
         href: my-new-cv.pdf
     left:
-      - text: Research
-        icon: atom
+      - text: "{{< fa atom  >}} Research"
         href: research.qmd
-      - text: Talks
-        icon: comments
+      - text: "{{< fa comments  >}} Talks"
         href: talks.qmd
   page-footer: 
     background: "#eeffee"
