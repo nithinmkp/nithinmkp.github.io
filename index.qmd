@@ -12,15 +12,6 @@ about: # https://quarto.org/docs/websites/website-about.html
     - icon: linkedin
       text: LinkedIn
       href: https://www.linkedin.com/in/nithinmkp/
-    - text: "{{< ai google-scholar >}}  Google Scholar" 
-      href: https://scholar.google.co.in/citations?view_op=list_works&hl=en&hl=en&user=odIUzUUAAAAJ
-    - icon: twitter
-      text: Twitter
-      href: https://x.com/nithinnithu_m
-    - text: "{{< iconify fa6-brands orcid >}}  ORCID"
-      href: https://orcid.org/0000-0002-0939-7927
-    - text: "{{< fa brands researchgate  >}} ResearchGate"
-      href: https://www.researchgate.net/profile/Nithin-M-2?ev=hdr_xprf
 ---
 
 Hello, I'm Nithin.
