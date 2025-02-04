@@ -1,0 +1,19 @@
+---
+title: "Talks/Invited Lectures"
+---
+
+# Invited Lectures
+
+- **Using R for Data Analysis**  
+  *Central University of South Bihar (Gaya, Bihar, 2022)*  
+  Invited lecture to introduce R for social science researchers.
+
+# Talks
+
+- **Purrr, A Multipurpose Package**  
+  *Boston R Users Group (Remote, 2021)*  
+  Delivered a lightning talk on the use of one of my favorite packages, 'Purrr.'
+
+- **A Sneak Peek into R for Economics**  
+  *Economiga (Remote, 2021)*  
+  Delivered a live talk on YouTube on using R in Economics Research.

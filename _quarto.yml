@@ -10,7 +10,11 @@ website:
         href: my-new-cv.pdf
     left:
       - text: Research
+        icon: atom
         href: research.qmd
+      - text: Talks
+        icon: comments
+        href: talks.qmd
   page-footer: 
     background: "#eeffee"
   

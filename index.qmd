@@ -6,7 +6,7 @@ about: # https://quarto.org/docs/websites/website-about.html
   template: trestles
   links:
     - icon: github
-      text: Github
+      text: GitHub
       href: https://github.com/nithinmkp/
     - icon: linkedin
       text: LinkedIn

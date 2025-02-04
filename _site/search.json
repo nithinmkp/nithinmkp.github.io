@@ -5,5 +5,19 @@
     "title": "Nithin M",
     "section": "",
     "text": "Hello, I’m Nithin. Welcome to my website! I’m an economist specializing in macroeconomics, with a passion for data analysis and programming.\nCurrently, I am Research Assistant at State Planning Board, Government of Kerala\nBeyond research and coding, I’m also an endurance athlete, always pushing boundaries—whether in economic modeling or on the track."
+  },
+  {
+    "objectID": "talks.html",
+    "href": "talks.html",
+    "title": "Talks/Invited Lectures",
+    "section": "",
+    "text": "Invited Lectures\n\nUsing R for Data Analysis\nCentral University of South Bihar (Gaya, Bihar, 2022)\nInvited lecture to introduce R for social science researchers.\n\n\n\nTalks\n\nPurrr, A Multipurpose Package\nBoston R Users Group (Remote, 2021)\nDelivered a lightning talk on the use of one of my favorite packages, ‘Purrr.’\nA Sneak Peek into R for Economics\nEconomiga (Remote, 2021)\nDelivered a live talk on YouTube on using R in Economics Research."
+  },
+  {
+    "objectID": "research.html",
+    "href": "research.html",
+    "title": "Research",
+    "section": "",
+    "text": "Work in Progress\nThe Excess Sensitivity of Consumption to Sentiments: Does the PIH hold for India? [Slides]\nThis is a joint work with Dr. Siddhartha Chattopadhyay of IIT Kharagpur and Dr. Sohini Sahu of IIT Kanpur. This paper was presented at the 19th Annual Conference at ISI Delhi.\n\n\nPublications\n\nMani, N., Mishra, A. K., & Pandikasala, J. (2023). How serious is India’s nonperforming assets crisis? A structural satellite version of the financial-macroeconometric model. Asia-Pacific Financial Markets, 30(4), 761–794. https://doi.org/10.1007/s10690-023-09397-9\n\nJijin, P., Mishra, A. K., & Nithin, M. (2022). Macroeconomic determinants of remittances to India. Economic Change and Restructuring, 55(2), 1229–1248.\n\nPandikasala, J., Vyas, I., & Mani, N. (2022). Do financial development drive remittances?\n\nNithin, M., Jijin, P., & Baiju, P. (2018). Has demonetisation pushed digitalisation in India? Some counter evidences. Journal of Business Thought, 9, 58–69. https://doi.org/10.18311/jbt/2018/21170\n\n\n\nResearch Interests\nConsumption Dynamics, Consumption Heterogeneity, Fiscal and Monetary Issues"
   }
 ]
