@@ -36,7 +36,7 @@ library(openai)
 To use OpenAI’s API, you need an API key. If you haven’t already, sign up on [OpenAI’s website](https://platform.openai.com/)[ a](https://platform.openai.com/) and obtain your API key. Then, store it securely in your R session:
 
 ```{r}
-Sys.setenv(OPENAI_API_KEY = "sk-fb2nU3k-sOOai3mpVV7rO5ipDZywcmexhXYeQcC_WQT3BlbkFJtlJewjFQsg4_DDjV-baYUz4RzIJMdWPWfliV3l1bsA")
+Sys.setenv(OPENAI_API_KEY = "Your API Key")
 ```
 
 Alternatively, you can store the key in an `.Renviron` file for persistent access.
