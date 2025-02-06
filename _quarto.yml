@@ -13,6 +13,8 @@ website:
         href: research.qmd
       - text: "{{< fa comments  >}} Talks"
         href: talks.qmd
+      - text: Blog
+        href: blog/index.qmd
   page-footer: 
     background: "#eeffee"
   

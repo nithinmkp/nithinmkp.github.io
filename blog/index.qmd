@@ -1,0 +1,16 @@
+---
+title: Blog
+listing: 
+  contents: /
+  type: default
+  categories: true
+  filter-ui: [title, date]
+page-layout: full
+
+---
+
+Welcome to my Blog!! 
+
+Here, I’ll share ideas, tips, and tricks on R programming, Statistics, Econometrics, Data Science, and a bit about running. Whether you’re interested in data or looking for running motivation, I hope you find something useful!
+
+Please feel free to reach out to me!!
