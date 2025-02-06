@@ -39,14 +39,14 @@
     "href": "blog/AI/index.html#install-and-load-the-openai-package",
     "title": "Generate images with OpenAI",
     "section": "Install and Load the openai Package",
-    "text": "Install and Load the openai Package\nBefore we begin, make sure you have the openai package installed. If you haven’t installed it yet, you can do so using:\n\ninstall.packages(\"openai\", repos = \"https://cloud.r-project.org/\")\n\nInstalling package into 'C:/Users/hp/AppData/Local/R/win-library/4.3'\n(as 'lib' is unspecified)\n\n\npackage 'openai' successfully unpacked and MD5 sums checked\n\nThe downloaded binary packages are in\n    C:\\Users\\hp\\AppData\\Local\\Temp\\RtmpsNmS06\\downloaded_packages\n\n\nLoad the package into your R session:\n\nlibrary(openai)"
+    "text": "Install and Load the openai Package\nBefore we begin, make sure you have the openai package installed. If you haven’t installed it yet, you can do so using:\n\ninstall.packages(\"openai\", repos = \"https://cloud.r-project.org/\")\n\nLoad the package into your R session:\n\nlibrary(openai)"
   },
   {
     "objectID": "blog/AI/index.html#setting-up-your-api-key",
     "href": "blog/AI/index.html#setting-up-your-api-key",
     "title": "Generate images with OpenAI",
     "section": "Setting Up Your API Key",
-    "text": "Setting Up Your API Key\nTo use OpenAI’s API, you need an API key. If you haven’t already, sign up on OpenAI’s websitea and obtain your API key. Then, store it securely in your R session:\n\nSys.setenv(OPENAI_API_KEY = \"sk-fb2nU3k-sOOai3mpVV7rO5ipDZywcmexhXYeQcC_WQT3BlbkFJtlJewjFQsg4_DDjV-baYUz4RzIJMdWPWfliV3l1bsA\")\n\nAlternatively, you can store the key in an .Renviron file for persistent access."
+    "text": "Setting Up Your API Key\nTo use OpenAI’s API, you need an API key. If you haven’t already, sign up on OpenAI’s websitea and obtain your API key. Then, store it securely in your R session:\n\nSys.setenv(OPENAI_API_KEY = \"Your API Key\")\n\nAlternatively, you can store the key in an .Renviron file for persistent access."
   },
   {
     "objectID": "blog/AI/index.html#basic-image-generation",

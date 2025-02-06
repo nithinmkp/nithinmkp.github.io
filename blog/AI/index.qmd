@@ -20,6 +20,9 @@ In this tutorial, we will explore how to generate images using OpenAI's image ge
 Before we begin, make sure you have the `openai` package installed. If you haven’t installed it yet, you can do so using:
 
 ```{r}
+#| eval: false
+#| message: false
+#| warning: false
 install.packages("openai", repos = "https://cloud.r-project.org/")
 
 ```
@@ -28,6 +31,9 @@ install.packages("openai", repos = "https://cloud.r-project.org/")
 Load the package into your R session:
 
 ```{r}
+#| eval: false
+#| message: false
+#| warning: false
 library(openai)
 ```
 
@@ -36,6 +42,9 @@ library(openai)
 To use OpenAI’s API, you need an API key. If you haven’t already, sign up on [OpenAI’s website](https://platform.openai.com/)[ a](https://platform.openai.com/) and obtain your API key. Then, store it securely in your R session:
 
 ```{r}
+#| eval: false
+#| message: false
+#| warning: false
 Sys.setenv(OPENAI_API_KEY = "Your API Key")
 ```
 
