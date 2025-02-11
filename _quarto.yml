@@ -15,6 +15,8 @@ website:
         href: talks.qmd
       - text: Blog
         href: blog/index.qmd
+      - text: Contact
+        href: contact.qmd
   page-footer: 
     background: "#eeffee"
   
