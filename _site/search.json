@@ -1,66 +1,10 @@
 [
   {
-    "objectID": "index.html",
-    "href": "index.html",
-    "title": "Nithin M",
-    "section": "",
-    "text": "Hello, I’m Nithin. Welcome to my website! I’m an economist specializing in macroeconomics, with a passion for data analysis and programming.\nCurrently, I am a Research Assistant at State Planning Board, Government of Kerala\nBeyond research and coding, I’m also an endurance athlete, always pushing boundaries—whether in economic modeling or on the track."
-  },
-  {
     "objectID": "talks.html",
     "href": "talks.html",
     "title": "Talks/Invited Lectures",
     "section": "",
     "text": "Invited Lectures\n\nData Analysis using R (Hands-on Experience)\nPresidency University, Bangalore (Online, 2024)\nDelivered a session on using R for data analysis as part of the Faculty Development Program on Advanced Research Methodology & Data Analysis.\n🔗 Slides available here\nUsing R for Data Analysis\nCentral University of South Bihar (Gaya, Bihar, 2022)\nInvited lecture to introduce R for social science researchers.\n\n\n\nTalks\n\nWhat Grad School Don’t Teach You: Tools for Transparent and Reproducible Research\nPreconference Workshop, KEA Economic Conference 2025\nDelivered a session on the importance of reproducibility in research, covering tools like Git, Quarto, R, and Python.\n🔗 Materials available here\nPurrr, A Multipurpose Package\nBoston R Users Group (Remote, 2021)\nDelivered a lightning talk on the use of one of my favorite packages, ‘Purrr.’\nA Sneak Peek into R for Economics\nEconomiga (Remote, 2021)\nDelivered a live talk on using R in Economics Research.\n🔗 Watch the talk here\n🔗 Event details"
-  },
-  {
-    "objectID": "research.html",
-    "href": "research.html",
-    "title": "Research",
-    "section": "",
-    "text": "Work in Progress\nThe Excess Sensitivity of Consumption to Sentiments: Does the PIH hold for India? [Slides]\nThis is a joint work with Dr. Siddhartha Chattopadhyay of IIT Kharagpur and Dr. Sohini Sahu of IIT Kanpur. This paper was presented at the 19th Annual Conference at ISI Delhi.\n\n\nPublications\n\nMani, N., Mishra, A. K., & Pandikasala, J. (2023). How serious is India’s nonperforming assets crisis? A structural satellite version of the financial-macroeconometric model. Asia-Pacific Financial Markets, 30(4), 761–794. https://doi.org/10.1007/s10690-023-09397-9\n\nJijin, P., Mishra, A. K., & Nithin, M. (2022). Macroeconomic determinants of remittances to India. Economic Change and Restructuring, 55(2), 1229–1248.\n\nPandikasala, J., Vyas, I., & Mani, N. (2022). Do financial development drive remittances?\n\nNithin, M., Jijin, P., & Baiju, P. (2018). Has demonetisation pushed digitalisation in India? Some counter evidences. Journal of Business Thought, 9, 58–69. https://doi.org/10.18311/jbt/2018/21170\n\n\n\nResearch Interests\nConsumption Dynamics, Consumption Heterogeneity, Fiscal and Monetary Issues"
-  },
-  {
-    "objectID": "blog/index.html",
-    "href": "blog/index.html",
-    "title": "Blog",
-    "section": "",
-    "text": "Welcome to my Blog!!\nHere, I’ll share ideas, tips, and tricks on R programming, Statistics, Econometrics, Data Science, and a bit about running. Whether you’re interested in data or looking for running motivation, I hope you find something useful!\nPlease feel free to reach out to me!!\n\n\n\n\n\n\n    \n      \n      \n    \n\n\n\n\n\n\n\n\n\n\nGenerate images with OpenAI\n\n\n\n\n\n\nR\n\n\nOpenAI\n\n\nTutorial\n\n\n\n\n\n\n\n\n\nFeb 6, 2025\n\n\n\n\n\n\nNo matching items"
-  },
-  {
-    "objectID": "blog/AI/index.html",
-    "href": "blog/AI/index.html",
-    "title": "Generate images with OpenAI",
-    "section": "",
-    "text": "In this tutorial, we will explore how to generate images using OpenAI’s image generation API in R. The openai package provides a simple way to interact with OpenAI’s models, making it easy for R users to create AI-generated visuals. Whether you’re a data scientist, researcher, or hobbyist, this guide will help you get started with generating images programmatically."
-  },
-  {
-    "objectID": "blog/AI/index.html#install-and-load-the-openai-package",
-    "href": "blog/AI/index.html#install-and-load-the-openai-package",
-    "title": "Generate images with OpenAI",
-    "section": "Install and Load the openai Package",
-    "text": "Install and Load the openai Package\nBefore we begin, make sure you have the openai package installed. If you haven’t installed it yet, you can do so using:\n\ninstall.packages(\"openai\", repos = \"https://cloud.r-project.org/\")\n\nLoad the package into your R session:\n\nlibrary(openai)"
-  },
-  {
-    "objectID": "blog/AI/index.html#setting-up-your-api-key",
-    "href": "blog/AI/index.html#setting-up-your-api-key",
-    "title": "Generate images with OpenAI",
-    "section": "Setting Up Your API Key",
-    "text": "Setting Up Your API Key\nTo use OpenAI’s API, you need an API key. If you haven’t already, sign up on OpenAI’s websitea and obtain your API key. Then, store it securely in your R session:\n\nSys.setenv(OPENAI_API_KEY = \"Your API Key\")\n\nAlternatively, you can store the key in an .Renviron file for persistent access."
-  },
-  {
-    "objectID": "blog/AI/index.html#basic-image-generation",
-    "href": "blog/AI/index.html#basic-image-generation",
-    "title": "Generate images with OpenAI",
-    "section": "Basic Image Generation",
-    "text": "Basic Image Generation\nHere’s a simple example where we generate an image of a futuristic city:\n\nresponse &lt;- create_image(\n  prompt = \"a roman cat\",\n  n = 1,  # Number of images to generate\n  size = \"1024x1024\"  # Image size\n)\n\n# Print the response to get the image URL\nresponse$data$url"
-  },
-  {
-    "objectID": "blog/AI/index.html#customizing-the-output",
-    "href": "blog/AI/index.html#customizing-the-output",
-    "title": "Generate images with OpenAI",
-    "section": "Customizing the Output",
-    "text": "Customizing the Output\nYou can modify the n parameter to generate multiple images at once:\n\nresponse &lt;- create_image(\n  prompt = \"A cyberpunk-themed street with neon lights\",\n  n = 3,  # Generate three images\n  size = \"1024x1024\"\n)\n\n# View all generated image URLs\nresponse$data$url"
   },
   {
     "objectID": "new.html",
@@ -103,5 +47,61 @@
     "title": "Contact",
     "section": "",
     "text": "Nithin M\nSocial Services Division\nKerala State Planning Board\nPattom, Thiruvananthapuram\nKerala - 695004\nPhone: +91 9447748013\nE-mail: write2nithinm@gmail.com"
+  },
+  {
+    "objectID": "blog/AI/index.html",
+    "href": "blog/AI/index.html",
+    "title": "Generate images with OpenAI",
+    "section": "",
+    "text": "In this tutorial, we will explore how to generate images using OpenAI’s image generation API in R. The openai package provides a simple way to interact with OpenAI’s models, making it easy for R users to create AI-generated visuals. Whether you’re a data scientist, researcher, or hobbyist, this guide will help you get started with generating images programmatically."
+  },
+  {
+    "objectID": "blog/AI/index.html#install-and-load-the-openai-package",
+    "href": "blog/AI/index.html#install-and-load-the-openai-package",
+    "title": "Generate images with OpenAI",
+    "section": "Install and Load the openai Package",
+    "text": "Install and Load the openai Package\nBefore we begin, make sure you have the openai package installed. If you haven’t installed it yet, you can do so using:\n\ninstall.packages(\"openai\", repos = \"https://cloud.r-project.org/\")\n\nLoad the package into your R session:\n\nlibrary(openai)"
+  },
+  {
+    "objectID": "blog/AI/index.html#setting-up-your-api-key",
+    "href": "blog/AI/index.html#setting-up-your-api-key",
+    "title": "Generate images with OpenAI",
+    "section": "Setting Up Your API Key",
+    "text": "Setting Up Your API Key\nTo use OpenAI’s API, you need an API key. If you haven’t already, sign up on OpenAI’s websitea and obtain your API key. Then, store it securely in your R session:\n\nSys.setenv(OPENAI_API_KEY = \"Your API Key\")\n\nAlternatively, you can store the key in an .Renviron file for persistent access."
+  },
+  {
+    "objectID": "blog/AI/index.html#basic-image-generation",
+    "href": "blog/AI/index.html#basic-image-generation",
+    "title": "Generate images with OpenAI",
+    "section": "Basic Image Generation",
+    "text": "Basic Image Generation\nHere’s a simple example where we generate an image of a futuristic city:\n\nresponse &lt;- create_image(\n  prompt = \"a roman cat\",\n  n = 1,  # Number of images to generate\n  size = \"1024x1024\"  # Image size\n)\n\n# Print the response to get the image URL\nresponse$data$url"
+  },
+  {
+    "objectID": "blog/AI/index.html#customizing-the-output",
+    "href": "blog/AI/index.html#customizing-the-output",
+    "title": "Generate images with OpenAI",
+    "section": "Customizing the Output",
+    "text": "Customizing the Output\nYou can modify the n parameter to generate multiple images at once:\n\nresponse &lt;- create_image(\n  prompt = \"A cyberpunk-themed street with neon lights\",\n  n = 3,  # Generate three images\n  size = \"1024x1024\"\n)\n\n# View all generated image URLs\nresponse$data$url"
+  },
+  {
+    "objectID": "blog/index.html",
+    "href": "blog/index.html",
+    "title": "Blog",
+    "section": "",
+    "text": "Welcome to my Blog!!\nHere, I’ll share ideas, tips, and tricks on R programming, Statistics, Econometrics, Data Science, and a bit about running. Whether you’re interested in data or looking for running motivation, I hope you find something useful!\nPlease feel free to reach out to me!!\n\n\n\n\n\n\n    \n      \n      \n    \n\n\n\n\n\n\n\n\n\n\nGenerate images with OpenAI\n\n\n\n\n\n\nR\n\n\nOpenAI\n\n\nTutorial\n\n\n\n\n\n\n\n\n\nMar 26, 2025\n\n\n\n\n\n\nNo matching items"
+  },
+  {
+    "objectID": "index.html",
+    "href": "index.html",
+    "title": "Nithin M",
+    "section": "",
+    "text": "Hello, I’m Nithin. Welcome to my website! I’m an economist specializing in macroeconomics, with a passion for data analysis and programming.\nCurrently, I am a Research Assistant at State Planning Board, Government of Kerala\nBeyond research and coding, I’m also an endurance athlete, always pushing boundaries—whether in economic modeling or on the track."
+  },
+  {
+    "objectID": "research.html",
+    "href": "research.html",
+    "title": "Research",
+    "section": "",
+    "text": "Work in Progress\nDoes Sentiment Predict Consumption Growth of Indian Households? [Slides] [Paper]\nThis is a joint work with Dr. Siddhartha Chattopadhyay of IIT Kharagpur and Dr. Sohini Sahu of IIT Kanpur. Earlier version of this paper was presented at the 19th Annual Conference at ISI Delhi and Workshop on Open Economy Macroeconomics and Economic Integration in Emerging Market Economies at Centre for Development Studies, Thiruvananthapuram.\n\n\nPublications\n\nMani, N., Mishra, A. K., & Pandikasala, J. (2023). How serious is India’s nonperforming assets crisis? A structural satellite version of the financial-macroeconometric model. Asia-Pacific Financial Markets, 30(4), 761–794. https://doi.org/10.1007/s10690-023-09397-9\n\nJijin, P., Mishra, A. K., & Nithin, M. (2022). Macroeconomic determinants of remittances to India. Economic Change and Restructuring, 55(2), 1229–1248.\n\nPandikasala, J., Vyas, I., & Mani, N. (2022). Do financial development drive remittances?\n\nNithin, M., Jijin, P., & Baiju, P. (2018). Has demonetisation pushed digitalisation in India? Some counter evidences. Journal of Business Thought, 9, 58–69. https://doi.org/10.18311/jbt/2018/21170\n\n\n\nResearch Interests\nConsumption Dynamics, Consumption Heterogeneity, Fiscal and Monetary Issues"
   }
 ]
