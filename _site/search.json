@@ -4,14 +4,14 @@
     "href": "index.html",
     "title": "Nithin M",
     "section": "",
-    "text": "Hello, I’m Nithin. Welcome to my website! I’m an economist specializing in macroeconomics, with a passion for data analysis and programming.\nCurrently, I am Research Assistant at State Planning Board, Government of Kerala\nBeyond research and coding, I’m also an endurance athlete, always pushing boundaries—whether in economic modeling or on the track."
+    "text": "Hello, I’m Nithin. Welcome to my website! I’m an economist specializing in macroeconomics, with a passion for data analysis and programming.\nCurrently, I am a Research Assistant at State Planning Board, Government of Kerala\nBeyond research and coding, I’m also an endurance athlete, always pushing boundaries—whether in economic modeling or on the track."
   },
   {
     "objectID": "talks.html",
     "href": "talks.html",
     "title": "Talks/Invited Lectures",
     "section": "",
-    "text": "Invited Lectures\n\nUsing R for Data Analysis\nCentral University of South Bihar (Gaya, Bihar, 2022)\nInvited lecture to introduce R for social science researchers.\n\n\n\nTalks\n\nPurrr, A Multipurpose Package\nBoston R Users Group (Remote, 2021)\nDelivered a lightning talk on the use of one of my favorite packages, ‘Purrr.’\nA Sneak Peek into R for Economics\nEconomiga (Remote, 2021)\nDelivered a live talk on YouTube on using R in Economics Research."
+    "text": "Invited Lectures\n\nData Analysis using R (Hands-on Experience)\nPresidency University, Bangalore (Online, 2024)\nDelivered a session on using R for data analysis as part of the Faculty Development Program on Advanced Research Methodology & Data Analysis.\n🔗 Slides available here\nUsing R for Data Analysis\nCentral University of South Bihar (Gaya, Bihar, 2022)\nInvited lecture to introduce R for social science researchers.\n\n\n\nTalks\n\nWhat Grad School Don’t Teach You: Tools for Transparent and Reproducible Research\nPreconference Workshop, KEA Economic Conference 2025\nDelivered a session on the importance of reproducibility in research, covering tools like Git, Quarto, R, and Python.\n🔗 Materials available here\nPurrr, A Multipurpose Package\nBoston R Users Group (Remote, 2021)\nDelivered a lightning talk on the use of one of my favorite packages, ‘Purrr.’\nA Sneak Peek into R for Economics\nEconomiga (Remote, 2021)\nDelivered a live talk on using R in Economics Research.\n🔗 Watch the talk here\n🔗 Event details"
   },
   {
     "objectID": "research.html",
@@ -96,5 +96,12 @@
     "title": "Generate images with OpenAI",
     "section": "Customizing the Output",
     "text": "Customizing the Output\nYou can modify the n parameter to generate multiple images at once:\nresponse &lt;- create_image(\n  prompt = \"A cyberpunk-themed street with neon lights\",\n  n = 3,  # Generate three images\n  size = \"1024x1024\"\n)\n\n# View all generated image URLs\nresponse$data$url"
+  },
+  {
+    "objectID": "contact.html",
+    "href": "contact.html",
+    "title": "Contact",
+    "section": "",
+    "text": "Nithin M\nSocial Services Division\nKerala State Planning Board\nPattom, Thiruvananthapuram\nKerala - 695004\nPhone: +91 9447748013\nE-mail: write2nithinm@gmail.com"
   }
 ]

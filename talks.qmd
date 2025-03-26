@@ -4,11 +4,21 @@ title: "Talks/Invited Lectures"
 
 # Invited Lectures
 
+- **Data Analysis using R (Hands-on Experience)**  
+  *Presidency University, Bangalore (Online, 2024)*  
+  Delivered a session on using **R for data analysis** as part of the **Faculty Development Program on Advanced Research Methodology & Data Analysis**.  
+  🔗 [Slides available here](https://christ-r-talk.netlify.app)
+
 - **Using R for Data Analysis**  
   *Central University of South Bihar (Gaya, Bihar, 2022)*  
   Invited lecture to introduce R for social science researchers.
 
 # Talks
+
+- **What Grad School Don’t Teach You: Tools for Transparent and Reproducible Research**  
+  *Preconference Workshop, KEA Economic Conference 2025*  
+  Delivered a session on the importance of reproducibility in research, covering tools like Git, Quarto, R, and Python.  
+  🔗 [Materials available here](https://nithinmkp.github.io/kea-talk/)
 
 - **Purrr, A Multipurpose Package**  
   *Boston R Users Group (Remote, 2021)*  
@@ -16,4 +26,6 @@ title: "Talks/Invited Lectures"
 
 - **A Sneak Peek into R for Economics**  
   *Economiga (Remote, 2021)*  
-  Delivered a live talk on YouTube on using R in Economics Research.
+  Delivered a live talk on using R in Economics Research.  
+  🔗 [Watch the talk here](https://www.youtube.com/watch?v=vdD1w5_UGZs)  
+  🔗 [Event details](https://www.economiga.org/econtalks/a-sneak-peek-into-r-for-economics)
