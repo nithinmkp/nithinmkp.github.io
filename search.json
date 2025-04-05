@@ -49,6 +49,34 @@
     "text": "Nithin M\nSocial Services Division\nKerala State Planning Board\nPattom, Thiruvananthapuram\nKerala - 695004\nPhone: +91 9447748013\nE-mail: write2nithinm@gmail.com"
   },
   {
+    "objectID": "blog/Data/index.html",
+    "href": "blog/Data/index.html",
+    "title": "Streamlining R Workflows: A Practitioner’s Guide to Data Management",
+    "section": "",
+    "text": "here() starts at C:/Users/hp/Documents/GitHub/website/site\n\n\n── Attaching core tidyverse packages ──────────────────────── tidyverse 2.0.0 ──\n✔ dplyr     1.1.4     ✔ readr     2.1.5\n✔ forcats   1.0.0     ✔ stringr   1.5.1\n✔ ggplot2   3.5.1     ✔ tibble    3.2.1\n✔ lubridate 1.9.4     ✔ tidyr     1.3.1\n✔ purrr     1.0.4     \n── Conflicts ────────────────────────────────────────── tidyverse_conflicts() ──\n✖ purrr::%||%()   masks base::%||%()\n✖ dplyr::filter() masks stats::filter()\n✖ dplyr::lag()    masks stats::lag()\nℹ Use the conflicted package (&lt;http://conflicted.r-lib.org/&gt;) to force all conflicts to become errors"
+  },
+  {
+    "objectID": "blog/Data/index.html#setting-up-your-rstudio-project",
+    "href": "blog/Data/index.html#setting-up-your-rstudio-project",
+    "title": "Streamlining R Workflows: A Practitioner’s Guide to Data Management",
+    "section": "Setting Up Your RStudio Project",
+    "text": "Setting Up Your RStudio Project\nBefore we dive into data management techniques, it’s essential to organize your work efficiently. I recommend starting by creating a new project in RStudio. This will help you manage your files and set a working directory automatically.\n\nOpen RStudio.\nGo to File -&gt; New Project....\nChoose New Directory -&gt; New Project.\nName your project and select a directory.\nClick Create Project.\n\nWith your project set up, you can easily manage your files and scripts, ensuring that your working directory is always pointing to the correct folder."
+  },
+  {
+    "objectID": "blog/Data/index.html#sample-data",
+    "href": "blog/Data/index.html#sample-data",
+    "title": "Streamlining R Workflows: A Practitioner’s Guide to Data Management",
+    "section": "Sample Data",
+    "text": "Sample Data\nLet us create a small sample data\n\n# Sample data frame\ndata &lt;- data.frame(\n  id = 1:5,\n  age = c(21, 25, 30, 22, 28),\n  gender = factor(c(\"Male\", \"Female\", \"Male\", \"Female\", \"Female\")),\n  income = c(50000, 60000, 70000, 80000, 90000),\n  education = c(1, 2, 3, 2, 1) # Numeric variable for education\n)\n\n\nlibrary(here) # for relative path\n# Save the dataset using the here package\nwrite_csv(data, file = here(\"data\", \"dummy_data.csv\"))\n\nThis will store our dummy data in the project folder."
+  },
+  {
+    "objectID": "blog/Data/index.html#renaming-variables-using-dplyr",
+    "href": "blog/Data/index.html#renaming-variables-using-dplyr",
+    "title": "Streamlining R Workflows: A Practitioner’s Guide to Data Management",
+    "section": "Renaming Variables Using dplyr",
+    "text": "Renaming Variables Using dplyr\nUsing the dplyr package, you can rename variables in two ways: with the rename() function or by using the select() function. Below is an example of both approaches, presented in a tabset for clarity.\n\nUsing rename()Using select()\n\n\n\n# Load dplyr\nlibrary(dplyr)\n\n# Sample data frame\ndata &lt;- data.frame(\n  id = 1:5,\n  age = c(21, 25, 30, 22, 28),\n  gender = factor(c(\"Male\", \"Female\", \"Male\", \"Female\", \"Female\")),\n  income = c(50000, 60000, 70000, 80000, 90000),\n  education = c(1, 2, 3, 2, 1) # Numeric variable for education\n)\n\n# Renaming variables using rename()\ndata &lt;- data %&gt;%\n  rename(\n    respondent_id = id,\n    education_level = education\n  )\n\n# Display updated names\nprint(names(data))\n\n[1] \"respondent_id\"   \"age\"             \"gender\"          \"income\"         \n[5] \"education_level\"\n\n\n\n\n\n# Load dplyr\nlibrary(dplyr)\n\n# Sample data frame\ndata &lt;- data.frame(\n  id = 1:5,\n  age = c(21, 25, 30, 22, 28),\n  gender = factor(c(\"Male\", \"Female\", \"Male\", \"Female\", \"Female\")),\n  income = c(50000, 60000, 70000, 80000, 90000),\n  education = c(1, 2, 3, 2, 1) # Numeric variable for education\n)\n\n# Renaming variables using select()\ndata &lt;- data %&gt;%\n  select(\n    respondent_id = id,\n    age,\n    gender,\n    income,\n    education_level = education\n  )\n\n# Display updated names\nprint(names(data))\n\n[1] \"respondent_id\"   \"age\"             \"gender\"          \"income\"         \n[5] \"education_level\""
+  },
+  {
     "objectID": "blog/AI/index.html",
     "href": "blog/AI/index.html",
     "title": "Generate images with OpenAI",
@@ -88,7 +116,7 @@
     "href": "blog/index.html",
     "title": "Blog",
     "section": "",
-    "text": "Welcome to my Blog!!\nHere, I’ll share ideas, tips, and tricks on R programming, Statistics, Econometrics, Data Science, and a bit about running. Whether you’re interested in data or looking for running motivation, I hope you find something useful!\nPlease feel free to reach out to me!!\n\n\n\n\n\n\n    \n      \n      \n    \n\n\n\n\n\n\n\n\n\n\nGenerate images with OpenAI\n\n\n\n\n\n\nR\n\n\nOpenAI\n\n\nTutorial\n\n\n\n\n\n\n\n\n\nMar 26, 2025\n\n\n\n\n\n\nNo matching items"
+    "text": "Welcome to my Blog!!\nHere, I’ll share ideas, tips, and tricks on R programming, Statistics, Econometrics, Data Science, and a bit about running. Whether you’re interested in data or looking for running motivation, I hope you find something useful!\nPlease feel free to reach out to me!!\n\n\n\n\n\n\n    \n      \n      \n    \n\n\n\n\n\n\n\n\n\n\nGenerate images with OpenAI\n\n\n\n\n\n\nR\n\n\nOpenAI\n\n\nTutorial\n\n\n\n\n\n\n\n\n\nApr 5, 2025\n\n\n\n\n\n\n\n\n\n\n\n\nStreamlining R Workflows: A Practitioner’s Guide to Data Management\n\n\n\n\n\n\nR\n\n\nData Management\n\n\nTutorial\n\n\n\n\n\n\n\n\n\nApr 5, 2025\n\n\n\n\n\n\nNo matching items"
   },
   {
     "objectID": "index.html",
@@ -103,5 +131,33 @@
     "title": "Research",
     "section": "",
     "text": "Work in Progress\nDoes Sentiment Predict Consumption Growth of Indian Households? [Slides] [Paper]\nThis is a joint work with Dr. Siddhartha Chattopadhyay of IIT Kharagpur and Dr. Sohini Sahu of IIT Kanpur. Earlier version of this paper was presented at the 19th Annual Conference at ISI Delhi and Workshop on Open Economy Macroeconomics and Economic Integration in Emerging Market Economies at Centre for Development Studies, Thiruvananthapuram.\n\n\nPublications\n\nMani, N., Mishra, A. K., & Pandikasala, J. (2023). How serious is India’s nonperforming assets crisis? A structural satellite version of the financial-macroeconometric model. Asia-Pacific Financial Markets, 30(4), 761–794. https://doi.org/10.1007/s10690-023-09397-9\n\nJijin, P., Mishra, A. K., & Nithin, M. (2022). Macroeconomic determinants of remittances to India. Economic Change and Restructuring, 55(2), 1229–1248.\n\nPandikasala, J., Vyas, I., & Mani, N. (2022). Do financial development drive remittances?\n\nNithin, M., Jijin, P., & Baiju, P. (2018). Has demonetisation pushed digitalisation in India? Some counter evidences. Journal of Business Thought, 9, 58–69. https://doi.org/10.18311/jbt/2018/21170\n\n\n\nResearch Interests\nConsumption Dynamics, Consumption Heterogeneity, Fiscal and Monetary Issues"
+  },
+  {
+    "objectID": "blog/Data/index.html#dropping-some-variables",
+    "href": "blog/Data/index.html#dropping-some-variables",
+    "title": "Streamlining R Workflows: A Practitioner’s Guide to Data Management",
+    "section": "Dropping some variables",
+    "text": "Dropping some variables\nDropping variables is a key operation in data cleaning. Let us see how we do it\n\nBase-RTidyverse\n\n\n\n# Drop 'education' column by excluding it\ndata &lt;- data[, names(data) != \"education\"]\n\n\n# Alternatively, keep only specific columns\ndata &lt;- data[, c(\"id\", \"age\", \"gender\", \"income\")]\n\n\n\n\nlibrary(dplyr)\n\n# Drop 'education' column using dplyr\ndata &lt;- data %&gt;% select(-education)\n\n# Keep only specific columns\ndata &lt;- data %&gt;% select(id, age, gender, income)"
+  },
+  {
+    "objectID": "blog/Data/index.html#renaming",
+    "href": "blog/Data/index.html#renaming",
+    "title": "Streamlining R Workflows: A Practitioner’s Guide to Data Management",
+    "section": "Renaming",
+    "text": "Renaming\nRenaming variables is essential for clarity and consistency, especially when dealing with raw data that may use cryptic or inconsistent naming conventions, long variable names etc.\nMany users tend to rely on base R functions to rename variables within their data frames. The most common method involves using the names() function or colnames() function to directly set new variable names. Here’s how typical users might approach this task:\n\ncolnames(data) &lt;- c(\"respondent_id\", \"age\", \"gender\", \"income\", \"education_level\")\nhead(data)\n\na more familiar user of R might prefer using tidyverse approach which can be of two methods\nUsing the dplyr package, you can rename variables in two ways: with the rename() function or by using the select() function. Below is an example of both approaches\n\nUsing rename()Using select()\n\n\n\n# Load dplyr\nlibrary(dplyr)\n\n# Sample data frame\ndata &lt;- data.frame(\n  id = 1:5,\n  age = c(21, 25, 30, 22, 28),\n  gender = factor(c(\"Male\", \"Female\", \"Male\", \"Female\", \"Female\")),\n  income = c(50000, 60000, 70000, 80000, 90000),\n  education = c(1, 2, 3, 2, 1) # Numeric variable for education\n)\n\n# Renaming variables using rename()\ndata &lt;- data %&gt;%\n  rename(\n    respondent_id = id,\n    education_level = education\n  )\n\n# Display updated names\nhead(data)\n\n\n\n\n# Load dplyr\nlibrary(dplyr)\n\n# Sample data frame\ndata &lt;- data.frame(\n  id = 1:5,\n  age = c(21, 25, 30, 22, 28),\n  gender = factor(c(\"Male\", \"Female\", \"Male\", \"Female\", \"Female\")),\n  income = c(50000, 60000, 70000, 80000, 90000),\n  education = c(1, 2, 3, 2, 1) # Numeric variable for education\n)\n\n# Renaming variables using select()\ndata &lt;- data %&gt;%\n  select(\n    respondent_id = id,\n    age,\n    gender,\n    income,\n    education_level = education\n  )\n\n# Display updated names\nhead(data)"
+  },
+  {
+    "objectID": "blog/Data/index.html#labelling",
+    "href": "blog/Data/index.html#labelling",
+    "title": "Streamlining R Workflows: A Practitioner’s Guide to Data Management",
+    "section": "Labelling",
+    "text": "Labelling\nVariable labels provide descriptive metadata that help users (including future you!) understand the meaning of each variable. This is especially useful in large projects or when preparing data for sharing. R users often overlook the importance of creating labels for their variables. When they do decide to create labels, they typically use the labelled package or similar approaches. Here’s how they might go about it:\n\nBase R (with Hmisc)Tidyverse (with labelled)\n\n\n\n# install.packages(\"Hmisc\") # if not already installed\nlibrary(Hmisc)\n\nlabel(data$age) &lt;- \"Age in years\"\nlabel(data$gender) &lt;- \"Gender of respondent\"\nlabel(data$income) &lt;- \"Annual income in USD\"\nlabel(data$education) &lt;- \"Education level\"\n\n\n\n\n# install.packages(\"labelled\") # if not already installed\nlibrary(labelled)\n\ndata &lt;- data %&gt;%\n  set_variable_labels(\n    age = \"Age in years\",\n    gender = \"Gender of respondent\",\n    income = \"Annual income in USD\",\n    education = \"Education level (1=Primary, 2=Secondary, 3=Tertiary)\"\n  )"
+  },
+  {
+    "objectID": "blog/Data/index.html#setting-up-the-environment",
+    "href": "blog/Data/index.html#setting-up-the-environment",
+    "title": "Streamlining R Workflows: A Practitioner’s Guide to Data Management",
+    "section": "Setting Up the Environment",
+    "text": "Setting Up the Environment\nThe first step in creating a reproducible working environment in R is setting up your packages and dependencies in a clean, consistent manner.\n\nWhy pacman?\nOver the years, I’ve tried various strategies to streamline package management — including writing custom functions to install and load required libraries. These functions usually looped through a list of package names, checked if they were installed, installed those that were missing, and then loaded them. While this worked, it was often verbose and harder to maintain over time.\nNow, I prefer using pacman, which offers the same functionality with a cleaner, more robust interface.\n\nif (!require(\"pacman\")) install.packages(\"pacman\")\npacman::p_load(\n  tidyverse, haven, janitor, labelled, skimr,\n  readxl, writexl, here, stringr\n)\n\nThis one-liner installs any missing packages and loads them, eliminating the need to manually manage install.packages() and library() calls — and avoids the common practice of commenting out installation lines, which can silently break code for others or even your future self.\nMy Earlier Approach Before adopting pacman, I wrote a custom function to do just this — install and load a list of packages in a single go. You can view that function here:\nCustom Package Loader Function (GitHub Gist)\n\n\nBeyond pacman: Full Environment Reproducibility\nFor long-term and collaborative projects, it’s beneficial to complement pacman with tools that enhance reproducibility and robustness — such as renv, targets, and Docker.\nThese tools help manage dependencies, structure workflows, and containerize your environment for seamless collaboration and future-proofing. I’ll discuss each of them in more detail later."
   }
 ]

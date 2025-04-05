@@ -2,7 +2,8 @@
   {
     "listing": "/blog/index.html",
     "items": [
-      "/blog/AI/index.html"
+      "/blog/AI/index.html",
+      "/blog/Data/index.html"
     ]
   }
 ]
