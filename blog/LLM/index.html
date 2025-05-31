@@ -6,9 +6,10 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
+<meta name="author" content="Nithin M">
 <meta name="dcterms.date" content="2025-05-31">
 
-<title>Generate images with OpenAI – Nithin M</title>
+<title>LLMs in R and Python – Nithin M</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -58,24 +59,24 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </style>
 
 
-<script src="site_libs/quarto-nav/quarto-nav.js"></script>
-<script src="site_libs/quarto-nav/headroom.min.js"></script>
-<script src="site_libs/clipboard/clipboard.min.js"></script>
-<script src="site_libs/quarto-search/autocomplete.umd.js"></script>
-<script src="site_libs/quarto-search/fuse.min.js"></script>
-<script src="site_libs/quarto-search/quarto-search.js"></script>
-<meta name="quarto:offset" content="./">
-<script src="site_libs/quarto-html/quarto.js"></script>
-<script src="site_libs/quarto-html/popper.min.js"></script>
-<script src="site_libs/quarto-html/tippy.umd.min.js"></script>
-<script src="site_libs/quarto-html/anchor.min.js"></script>
-<link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="site_libs/quarto-html/quarto-syntax-highlighting-549806ee2085284f45b00abea8c6df48.css" rel="stylesheet" id="quarto-text-highlighting-styles">
-<script src="site_libs/bootstrap/bootstrap.min.js"></script>
-<link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="site_libs/bootstrap/bootstrap-0b9e634d6b3ce48c58d3f4554a5398cf.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
-<link href="site_libs/quarto-contrib/fontawesome6-1.2.0/all.min.css" rel="stylesheet">
-<link href="site_libs/quarto-contrib/fontawesome6-1.2.0/latex-fontsize.css" rel="stylesheet">
+<script src="../../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../../site_libs/quarto-nav/headroom.min.js"></script>
+<script src="../../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../../site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="../../site_libs/quarto-search/fuse.min.js"></script>
+<script src="../../site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="../../">
+<script src="../../site_libs/quarto-html/quarto.js"></script>
+<script src="../../site_libs/quarto-html/popper.min.js"></script>
+<script src="../../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../../site_libs/quarto-html/quarto-syntax-highlighting-549806ee2085284f45b00abea8c6df48.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="../../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../../site_libs/bootstrap/bootstrap-0b9e634d6b3ce48c58d3f4554a5398cf.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<link href="../../site_libs/quarto-contrib/fontawesome6-1.2.0/all.min.css" rel="stylesheet">
+<link href="../../site_libs/quarto-contrib/fontawesome6-1.2.0/latex-fontsize.css" rel="stylesheet">
 <script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": false,
@@ -105,8 +106,9 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 }</script>
 
 
-<meta property="og:title" content="Generate images with OpenAI – Nithin M">
+<meta property="og:title" content="LLMs in R and Python – Nithin M">
 <meta property="og:description" content="">
+<meta property="og:image" content="llm.png">
 <meta property="og:site_name" content="Nithin M">
 </head>
 
@@ -117,7 +119,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
       <div class="navbar-container container-fluid">
       <div class="navbar-brand-container mx-auto">
-    <a class="navbar-brand" href="./index.html">
+    <a class="navbar-brand" href="../../index.html">
     <span class="navbar-title">Nithin M</span>
     </a>
   </div>
@@ -128,25 +130,25 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
           <div class="collapse navbar-collapse" id="navbarCollapse">
             <ul class="navbar-nav navbar-nav-scroll me-auto">
   <li class="nav-item">
-    <a class="nav-link" href="./research.html"> 
+    <a class="nav-link" href="../../research.html"> 
 <span class="menu-text"><i class="fa-solid fa-atom" aria-label="atom"></i> Research</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="./talks.html"> 
+    <a class="nav-link" href="../../talks.html"> 
 <span class="menu-text"><i class="fa-solid fa-comments" aria-label="comments"></i> Talks</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="./blog/index.html"> 
+    <a class="nav-link" href="../../blog/index.html"> 
 <span class="menu-text">Blog</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="./contact.html"> 
+    <a class="nav-link" href="../../contact.html"> 
 <span class="menu-text">Contact</span></a>
   </li>  
 </ul>
             <ul class="navbar-nav navbar-nav-scroll ms-auto">
   <li class="nav-item">
-    <a class="nav-link" href="./my-new-cv.pdf"> 
+    <a class="nav-link" href="../../my-new-cv.pdf"> 
 <span class="menu-text">CV</span></a>
   </li>  
 </ul>
@@ -165,19 +167,17 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#introduction" id="toc-introduction" class="nav-link active" data-scroll-target="#introduction">Introduction</a></li>
-  <li><a href="#setting-up-the-environment" id="toc-setting-up-the-environment" class="nav-link" data-scroll-target="#setting-up-the-environment">Setting Up the Environment</a>
+  <li><a href="#audience" id="toc-audience" class="nav-link active" data-scroll-target="#audience">Audience</a></li>
+  <li><a href="#getting-started" id="toc-getting-started" class="nav-link" data-scroll-target="#getting-started">Getting started</a></li>
+  <li><a href="#r" id="toc-r" class="nav-link" data-scroll-target="#r">R</a>
   <ul class="collapse">
-  <li><a href="#install-and-load-the-openai-package" id="toc-install-and-load-the-openai-package" class="nav-link" data-scroll-target="#install-and-load-the-openai-package">Install and Load the <code>openai</code> Package</a></li>
-  <li><a href="#setting-up-your-api-key" id="toc-setting-up-your-api-key" class="nav-link" data-scroll-target="#setting-up-your-api-key">Setting Up Your API Key</a></li>
+  <li><a href="#setting-up" id="toc-setting-up" class="nav-link" data-scroll-target="#setting-up">Setting Up</a></li>
   </ul></li>
-  <li><a href="#generating-images-with-openai" id="toc-generating-images-with-openai" class="nav-link" data-scroll-target="#generating-images-with-openai">Generating Images with OpenAI</a>
+  <li><a href="#python" id="toc-python" class="nav-link" data-scroll-target="#python">Python</a>
   <ul class="collapse">
-  <li><a href="#basic-image-generation" id="toc-basic-image-generation" class="nav-link" data-scroll-target="#basic-image-generation">Basic Image Generation</a></li>
-  <li><a href="#customizing-the-output" id="toc-customizing-the-output" class="nav-link" data-scroll-target="#customizing-the-output">Customizing the Output</a></li>
+  <li><a href="#export-chat" id="toc-export-chat" class="nav-link" data-scroll-target="#export-chat">Export chat</a></li>
   </ul></li>
-  <li><a href="#enhancing-and-saving-images" id="toc-enhancing-and-saving-images" class="nav-link" data-scroll-target="#enhancing-and-saving-images">Enhancing and Saving Images</a></li>
-  <li><a href="#use-cases-and-conclusion" id="toc-use-cases-and-conclusion" class="nav-link" data-scroll-target="#use-cases-and-conclusion">Use Cases and Conclusion</a></li>
+  <li><a href="#wrapping-up" id="toc-wrapping-up" class="nav-link" data-scroll-target="#wrapping-up">✨ Wrapping Up</a></li>
   </ul>
 </nav>
     </div>
@@ -186,10 +186,11 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">Generate images with OpenAI</h1>
+<h1 class="title">LLMs in R and Python</h1>
   <div class="quarto-categories">
     <div class="quarto-category">R</div>
-    <div class="quarto-category">OpenAI</div>
+    <div class="quarto-category">Python</div>
+    <div class="quarto-category">AI</div>
     <div class="quarto-category">Tutorial</div>
   </div>
   </div>
@@ -198,6 +199,12 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 
 <div class="quarto-title-meta">
 
+    <div>
+    <div class="quarto-title-meta-heading">Author</div>
+    <div class="quarto-title-meta-contents">
+             <p>Nithin M </p>
+          </div>
+  </div>
     
     <div>
     <div class="quarto-title-meta-heading">Published</div>
@@ -214,80 +221,218 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </header>
 
 
-<section id="introduction" class="level1">
-<h1>Introduction</h1>
-<p>In this tutorial, we will explore how to generate images using OpenAI’s image generation API in R. The <code>openai</code> package provides a simple way to interact with OpenAI’s models, making it easy for R users to create AI-generated visuals. Whether you’re a data scientist, researcher, or hobbyist, this guide will help you get started with generating images programmatically.</p>
-</section>
-<section id="setting-up-the-environment" class="level1">
-<h1>Setting Up the Environment</h1>
-<section id="install-and-load-the-openai-package" class="level2">
-<h2 class="anchored" data-anchor-id="install-and-load-the-openai-package">Install and Load the <code>openai</code> Package</h2>
-<p>Before we begin, make sure you have the <code>openai</code> package installed. If you haven’t installed it yet, you can do so using:</p>
-<div class="sourceCode" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">install.packages</span>(<span class="st">"openai"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<p>Load the package into your R session:</p>
-<div class="sourceCode" id="cb2"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(openai)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</section>
-<section id="setting-up-your-api-key" class="level2">
-<h2 class="anchored" data-anchor-id="setting-up-your-api-key">Setting Up Your API Key</h2>
-<p>To use OpenAI’s API, you need an API key. If you haven’t already, sign up on <a href="https://platform.openai.com/">OpenAI’s website</a><a href="https://platform.openai.com/">a</a>nd obtain your API key. Then, store it securely in your R session:</p>
-<div class="sourceCode" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="fu">Sys.setenv</span>(<span class="at">OPENAI_API_KEY =</span> <span class="st">"your-api-key-here"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<p>Alternatively, you can store the key in an <code>.Renviron</code> file for persistent access.</p>
-</section>
-</section>
-<section id="generating-images-with-openai" class="level1">
-<h1>Generating Images with OpenAI</h1>
-<p>Once you have set up your API key, you can start generating images. The <code>create_image()</code> function allows you to generate images based on text prompts.</p>
-<section id="basic-image-generation" class="level2">
-<h2 class="anchored" data-anchor-id="basic-image-generation">Basic Image Generation</h2>
-<p>Here’s a simple example where we generate an image of a futuristic city:</p>
-<div class="sourceCode" id="cb4"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a>response <span class="ot">&lt;-</span> <span class="fu">create_image</span>(</span>
-<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a>  <span class="at">prompt =</span> <span class="st">"A futuristic city skyline at sunset with flying cars"</span>,</span>
-<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a>  <span class="at">n =</span> <span class="dv">1</span>,  <span class="co"># Number of images to generate</span></span>
-<span id="cb4-4"><a href="#cb4-4" aria-hidden="true" tabindex="-1"></a>  <span class="at">size =</span> <span class="st">"1024x1024"</span>  <span class="co"># Image size</span></span>
-<span id="cb4-5"><a href="#cb4-5" aria-hidden="true" tabindex="-1"></a>)</span>
-<span id="cb4-6"><a href="#cb4-6" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb4-7"><a href="#cb4-7" aria-hidden="true" tabindex="-1"></a><span class="co"># Print the response to get the image URL</span></span>
-<span id="cb4-8"><a href="#cb4-8" aria-hidden="true" tabindex="-1"></a>response<span class="sc">$</span>data<span class="sc">$</span>url</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</section>
-<section id="customizing-the-output" class="level2">
-<h2 class="anchored" data-anchor-id="customizing-the-output">Customizing the Output</h2>
-<p>You can modify the <code>n</code> parameter to generate multiple images at once:</p>
-<div class="sourceCode" id="cb5"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a>response <span class="ot">&lt;-</span> <span class="fu">create_image</span>(</span>
-<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a>  <span class="at">prompt =</span> <span class="st">"A cyberpunk-themed street with neon lights"</span>,</span>
-<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a>  <span class="at">n =</span> <span class="dv">3</span>,  <span class="co"># Generate three images</span></span>
-<span id="cb5-4"><a href="#cb5-4" aria-hidden="true" tabindex="-1"></a>  <span class="at">size =</span> <span class="st">"1024x1024"</span></span>
-<span id="cb5-5"><a href="#cb5-5" aria-hidden="true" tabindex="-1"></a>)</span>
-<span id="cb5-6"><a href="#cb5-6" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb5-7"><a href="#cb5-7" aria-hidden="true" tabindex="-1"></a><span class="co"># View all generated image URLs</span></span>
-<span id="cb5-8"><a href="#cb5-8" aria-hidden="true" tabindex="-1"></a>response<span class="sc">$</span>data<span class="sc">$</span>url</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</section>
-</section>
-<section id="enhancing-and-saving-images" class="level1">
-<h1>Enhancing and Saving Images</h1>
-<p>Once you generate an image, you can download and save it using R. Here’s how:</p>
-<div class="sourceCode" id="cb6"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(httr)</span>
-<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a><span class="co"># Download and save the first image</span></span>
-<span id="cb6-4"><a href="#cb6-4" aria-hidden="true" tabindex="-1"></a>image_url <span class="ot">&lt;-</span> response<span class="sc">$</span>data<span class="sc">$</span>url[<span class="dv">1</span>]</span>
-<span id="cb6-5"><a href="#cb6-5" aria-hidden="true" tabindex="-1"></a><span class="fu">download.file</span>(image_url, <span class="at">destfile =</span> <span class="st">"generated_image.png"</span>, <span class="at">mode =</span> <span class="st">"wb"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<p>If you want to further process the image (e.g., cropping, resizing), you can use the <code>magick</code> package:</p>
-<div class="sourceCode" id="cb7"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(magick)</span>
-<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a><span class="co"># Load and display the image</span></span>
-<span id="cb7-4"><a href="#cb7-4" aria-hidden="true" tabindex="-1"></a>img <span class="ot">&lt;-</span> <span class="fu">image_read</span>(<span class="st">"generated_image.png"</span>)</span>
-<span id="cb7-5"><a href="#cb7-5" aria-hidden="true" tabindex="-1"></a><span class="fu">image_display</span>(img)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</section>
-<section id="use-cases-and-conclusion" class="level1">
-<h1>Use Cases and Conclusion</h1>
-<p>The ability to generate images with OpenAI in R opens up various possibilities:</p>
+<section id="audience" class="level1">
+<h1>Audience</h1>
 <ul>
-<li><strong>Content Creation</strong>: Generate visuals for blogs, social media, and articles.</li>
-<li><strong>Data Visualization</strong>: Create illustrative images for reports and presentations.</li>
-<li><strong>Creative Exploration</strong>: Experiment with AI-driven art and design.</li>
+<li>R/Python users</li>
+<li>some experience with coding</li>
+<li>used chatGPT/Claude in browser</li>
+<li>have not used LLMs in code</li>
 </ul>
-<p>This tutorial provided a step-by-step guide to generating images using OpenAI’s API in R. Try experimenting with different prompts and parameters to see what unique visuals you can create!</p>
-<hr>
-<p>Do you have any thoughts or suggestions? Let me know in the comments!</p>
+</section>
+<section id="getting-started" class="level1">
+<h1>Getting started</h1>
+<p>We will use LLMs through HTTP APIs.</p>
+<p>We will use the following packages:</p>
+<ul>
+<li>R – <a href="https://ellmer.tidyverse.org/">ellmer</a>, <a href="https://simonpcouch.github.io/gander/">gander</a>, <a href="https://simonpcouch.github.io/chores/">chores</a> and <a href="https://mlverse.github.io/mall/">mall</a></li>
+<li>Python – <a href="https://posit-dev.github.io/chatlas/">chatlas</a></li>
+</ul>
+</section>
+<section id="r" class="level1">
+<h1>R</h1>
+<section id="setting-up" class="level2">
+<h2 class="anchored" data-anchor-id="setting-up">Setting Up</h2>
+<p>We will use <code>ellmer</code> and <code>dotenv</code> packages in R to set things up. We use <code>dotenv</code> package to load our API keys.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">install.packages</span>(<span class="fu">c</span>(<span class="st">"ellmer"</span>,<span class="st">"dotenv"</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p>First we need to obtain API keys. Since OpenAI and Claude are not free, we will use “Gemini” and “Grok” in our examples</p>
+<ul>
+<li>obtain API keys and save in a <code>.env</code> file in the working directory as a key-value pair.</li>
+</ul>
+<pre><code>GEMINI_API_KEY=your_key_here
+GROK_API_KEY=your_key_here</code></pre>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="co"># options(ellmer.model = ellmer::chat_groq())</span></span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(ellmer)</span>
+<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(dotenv)</span>
+<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a><span class="fu">options</span>(<span class="at">ellmer.model =</span> ellmer<span class="sc">::</span><span class="fu">chat_google_gemini</span>())</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p>Now let us set the model and invoke the chat</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb4"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="co"># chat_google_gemini(system_prompt = "You are an experienced R Programmer. Give me only tidyverse codes. Also use proper linting and styling when giving codes")</span></span>
+<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a>client <span class="ot">&lt;-</span> <span class="fu">chat_google_gemini</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stderr">
+<pre><code>Using model = "gemini-2.0-flash".</code></pre>
+</div>
+</div>
+<p>Now that we have invoked the chat, let us prompt something</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb6"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a>client<span class="sc">$</span><span class="fu">chat</span>(<span class="st">"Summarize the plot of Romeo and Juliet in 20 words or less."</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>Two young lovers from feuding families, Romeo and Juliet, secretly marry and 
+tragically kill themselves due to misunderstandings.</code></pre>
+</div>
+</div>
+<p>We can continue the conversation by calling the <code>chat()</code> again.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb8"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a>client<span class="sc">$</span><span class="fu">chat</span>(<span class="st">"Now Macbeth"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>Driven by ambition and prophecy, Macbeth murders his way to the throne, but 
+guilt and paranoia lead to his downfall and death.</code></pre>
+</div>
+</div>
+<p>Now we can modify the system prompt and get better results</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb10"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="fu">chat_google_gemini</span>(</span>
+<span id="cb10-2"><a href="#cb10-2" aria-hidden="true" tabindex="-1"></a>  <span class="at">system_prompt =</span> <span class="st">"You are well versed in literature. Give some lucid explanation of the literature in about 100 words"</span></span>
+<span id="cb10-3"><a href="#cb10-3" aria-hidden="true" tabindex="-1"></a>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>&lt;Chat Google/Gemini/gemini-2.0-flash turns=1 tokens=0/0 $0.00&gt;
+── system [0] ──────────────────────────────────────────────────────────────────
+You are well versed in literature. Give some lucid explanation of the literature in about 100 words</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb12"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a>client <span class="ot">&lt;-</span> <span class="fu">chat_google_gemini</span>()</span>
+<span id="cb12-2"><a href="#cb12-2" aria-hidden="true" tabindex="-1"></a>client<span class="sc">$</span><span class="fu">chat</span>(<span class="st">"Summarize the plot of Romeo and Juliet"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>Romeo and Juliet is a tragic love story about two young people from feuding 
+families in Verona, Italy. Romeo Montague and Juliet Capulet meet at a party 
+and instantly fall in love. Unaware of each other's family affiliations, they 
+are devastated to learn they are enemies. Despite this, they secretly pledge 
+their love and are married by Friar Laurence, hoping their union will end the 
+family feud.
+
+However, their bliss is short-lived. Romeo is banished from Verona after 
+killing Juliet's cousin, Tybalt, in a duel to avenge the death of his friend 
+Mercutio. Juliet's parents, unaware of her marriage to Romeo, arrange for her 
+to marry Paris. Desperate to avoid this unwanted marriage, Juliet seeks help 
+from Friar Laurence, who devises a plan: she will drink a potion that will make
+her appear dead, and Romeo will be alerted and retrieve her from the family 
+tomb.
+
+Unfortunately, the message doesn't reach Romeo in time. He hears that Juliet is
+dead and, heartbroken, returns to Verona. He goes to Juliet's tomb, where he 
+encounters Paris and kills him in a duel. Believing Juliet to be truly dead, 
+Romeo drinks poison and dies beside her.
+
+Juliet awakens to find Romeo dead. Overwhelmed by grief and despair, she takes 
+his dagger and stabs herself.
+
+The families arrive at the tomb and, witnessing the tragic outcome of their 
+hatred, finally reconcile. They vow to honor Romeo and Juliet, acknowledging 
+the devastating consequences of their feud. The play ends with a solemn 
+reminder of the cost of hatred and the power of love.</code></pre>
+</div>
+</div>
+<p>we can also use the interactive window for conversation.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb14"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a><span class="fu">live_browser</span>(client)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p>Further,we can also save results of our chat.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb15"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a>client <span class="ot">&lt;-</span> <span class="fu">chat_groq</span>(</span>
+<span id="cb15-2"><a href="#cb15-2" aria-hidden="true" tabindex="-1"></a>  <span class="at">system_prompt =</span> <span class="st">"You are a friendly but terse assistant. You always use markdown syntax for code."</span>,</span>
+<span id="cb15-3"><a href="#cb15-3" aria-hidden="true" tabindex="-1"></a>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div class="cell" data-chat="client">
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Reply from chat using <code>elmer</code>
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<section id="using-map-function-in-r" class="level2">
+<h2 class="anchored" data-anchor-id="using-map-function-in-r"><strong>Using <code>map</code> Function in R</strong></h2>
+<p>The <code>map</code> function is part of the <code>purrr</code> package in R, which provides a lot of functional programming tools. You can use <code>map</code> to apply a function to each element of a list or vector.</p>
+<p><strong>Example</strong></p>
+<pre><code>library(purrr)
+
+# Create a list of numbers
+numbers &lt;- 1:5
+
+# Use map to square each number
+map(numbers, ~ .x^2)
+#&gt; [[1]]
+#&gt; [1] 1
+#&gt; 
+#&gt; [[2]]
+#&gt; [1] 4
+#&gt; 
+#&gt; [[3]]
+#&gt; [1] 9
+#&gt; 
+#&gt; [[4]]
+#&gt; [1] 16
+#&gt; 
+#&gt; [[5]]
+#&gt; [1] 25</code></pre>
+</section>
+<section id="comparison-with-lapply" class="level2">
+<h2 class="anchored" data-anchor-id="comparison-with-lapply"><strong>Comparison with <code>lapply</code></strong></h2>
+<p><code>lapply</code> is another function in R that applies a function to each element of a list or vector. Here’s an example:</p>
+<p><strong>Example</strong></p>
+<pre><code>numbers &lt;- 1:5
+
+# Use lapply to square each number
+lapply(numbers, function(x) x^2)
+#&gt; [[1]]
+#&gt; [1] 1
+#&gt; 
+#&gt; [[2]]
+#&gt; [1] 4
+#&gt; 
+#&gt; [[3]]
+#&gt; [1] 9
+#&gt; 
+#&gt; [[4]]
+#&gt; [1] 16
+#&gt; 
+#&gt; [[5]]
+#&gt; [1] 25</code></pre>
+<p>As you can see, both <code>map</code> and <code>lapply</code> produce the same output. The main difference is that <code>map</code> is more concise and expressive, while <code>lapply</code> is more verbose but provides more control over the iteration process.</p>
+<p>In general, if you need to perform a simple operation on each element of a collection, <code>map</code> is a good choice. If you need more control or flexibility, <code>lapply</code> might be a better option.</p>
+</section>
+</div>
+</div>
+</div>
+</section>
+</section>
+<section id="python" class="level1">
+<h1>Python</h1>
+<p>In python, we use the <code>chatlas</code> package. But before using the pakage let us install the <code>dotenv</code> package in <code>python</code>.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb18"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb18-1"><a href="#cb18-1" aria-hidden="true" tabindex="-1"></a><span class="ex">pip</span> install python-dotenv</span>
+<span id="cb18-2"><a href="#cb18-2" aria-hidden="true" tabindex="-1"></a><span class="ex">pip</span> install <span class="at">-U</span> chatlas</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p>simmilar to <code>ellmer</code> in R, we invoke a chat object first.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb19"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb19-1"><a href="#cb19-1" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> chatlas <span class="im">import</span> ChatGroq</span>
+<span id="cb19-2"><a href="#cb19-2" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> dotenv <span class="im">import</span> load_dotenv</span>
+<span id="cb19-3"><a href="#cb19-3" aria-hidden="true" tabindex="-1"></a>load_dotenv() </span>
+<span id="cb19-4"><a href="#cb19-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb19-5"><a href="#cb19-5" aria-hidden="true" tabindex="-1"></a>client <span class="op">=</span> ChatGroq()</span>
+<span id="cb19-6"><a href="#cb19-6" aria-hidden="true" tabindex="-1"></a>client.chat(<span class="st">"Summarize the plot of Romeo and Juliet in 20 words or less."</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<pre><code>Two young lovers from feuding families meet, secretly marry, and tragically
+die in a misunderstanding.</code></pre>
+<p>&nbsp;</p>
+<section id="export-chat" class="level2">
+<h2 class="anchored" data-anchor-id="export-chat">Export chat</h2>
+<p>Easily get a full markdown or HTML export of a conversation:</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb21"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb21-1"><a href="#cb21-1" aria-hidden="true" tabindex="-1"></a>chat.export(<span class="st">"convo.md"</span>, title<span class="op">=</span><span class="st">"Python Q&amp;A"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</section>
+</section>
+<section id="wrapping-up" class="level1">
+<h1>✨ Wrapping Up</h1>
+<p>Whether you’re an R aficionado or a Pythonista, incorporating LLMs into your workflow is no longer a stretch. With just a few lines of setup, you’re ready to bring powerful generative models into your daily analysis, documentation, or even code assistance.</p>
+<p>The possibilities are wide open. So — what will you ask your LLM next?</p>
 
 
 </section>

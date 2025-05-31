@@ -49,6 +49,48 @@
     "text": "Nithin M\nSocial Services Division\nKerala State Planning Board\nPattom, Thiruvananthapuram\nKerala - 695004\nPhone: +91 9447748013\nE-mail: write2nithinm@gmail.com"
   },
   {
+    "objectID": "blog/index.html",
+    "href": "blog/index.html",
+    "title": "Blog",
+    "section": "",
+    "text": "Welcome to my Blog!!\nHere, I’ll share ideas, tips, and tricks on R programming, Statistics, Econometrics, Data Science, and a bit about running. Whether you’re interested in data or looking for running motivation, I hope you find something useful!\nPlease feel free to reach out to me!!\n\n\n\n\n\n\n    \n      \n      \n    \n\n\n\n\n\n\n\n\n\n\nGenerate images with OpenAI\n\n\n\n\n\n\nR\n\n\nOpenAI\n\n\nTutorial\n\n\n\n\n\n\n\n\n\nFeb 28, 2025\n\n\n\n\n\n\n\n\n\n\n\n\nStreamlining R Workflows: A Practitioner’s Guide to Data Management\n\n\n\n\n\n\nR\n\n\nData Management\n\n\nTutorial\n\n\n\n\n\n\n\n\n\nMar 28, 2025\n\n\n\n\n\n\n\n\n\n\n\n\nLLMs in R and Python\n\n\n\n\n\n\nR\n\n\nPython\n\n\nAI\n\n\nTutorial\n\n\n\n\n\n\n\n\n\nMay 31, 2025\n\n\nNithin M\n\n\n\n\n\n\nNo matching items"
+  },
+  {
+    "objectID": "blog/AI/index.html",
+    "href": "blog/AI/index.html",
+    "title": "Generate images with OpenAI",
+    "section": "",
+    "text": "In this tutorial, we will explore how to generate images using OpenAI’s image generation API in R. The openai package provides a simple way to interact with OpenAI’s models, making it easy for R users to create AI-generated visuals. Whether you’re a data scientist, researcher, or hobbyist, this guide will help you get started with generating images programmatically."
+  },
+  {
+    "objectID": "blog/AI/index.html#install-and-load-the-openai-package",
+    "href": "blog/AI/index.html#install-and-load-the-openai-package",
+    "title": "Generate images with OpenAI",
+    "section": "Install and Load the openai Package",
+    "text": "Install and Load the openai Package\nBefore we begin, make sure you have the openai package installed. If you haven’t installed it yet, you can do so using:\n\ninstall.packages(\"openai\", repos = \"https://cloud.r-project.org/\")\n\nLoad the package into your R session:\n\nlibrary(openai)"
+  },
+  {
+    "objectID": "blog/AI/index.html#setting-up-your-api-key",
+    "href": "blog/AI/index.html#setting-up-your-api-key",
+    "title": "Generate images with OpenAI",
+    "section": "Setting Up Your API Key",
+    "text": "Setting Up Your API Key\nTo use OpenAI’s API, you need an API key. If you haven’t already, sign up on OpenAI’s websitea and obtain your API key. Then, store it securely in your R session:\n\nSys.setenv(OPENAI_API_KEY = \"Your API Key\")\n\nAlternatively, you can store the key in an .Renviron file for persistent access."
+  },
+  {
+    "objectID": "blog/AI/index.html#basic-image-generation",
+    "href": "blog/AI/index.html#basic-image-generation",
+    "title": "Generate images with OpenAI",
+    "section": "Basic Image Generation",
+    "text": "Basic Image Generation\nHere’s a simple example where we generate an image of a futuristic city:\n\nresponse &lt;- create_image(\n  prompt = \"a roman cat\",\n  n = 1,  # Number of images to generate\n  size = \"1024x1024\"  # Image size\n)\n\n# Print the response to get the image URL\nresponse$data$url"
+  },
+  {
+    "objectID": "blog/AI/index.html#customizing-the-output",
+    "href": "blog/AI/index.html#customizing-the-output",
+    "title": "Generate images with OpenAI",
+    "section": "Customizing the Output",
+    "text": "Customizing the Output\nYou can modify the n parameter to generate multiple images at once:\n\nresponse &lt;- create_image(\n  prompt = \"A cyberpunk-themed street with neon lights\",\n  n = 3,  # Generate three images\n  size = \"1024x1024\"\n)\n\n# View all generated image URLs\nresponse$data$url"
+  },
+  {
     "objectID": "blog/Data/index.html",
     "href": "blog/Data/index.html",
     "title": "Streamlining R Workflows: A Practitioner’s Guide to Data Management",
@@ -126,46 +168,39 @@
     "text": "Disclaimer\nThis post was drafted with the assistance of AI copy-editing tools to enhance clarity and flow. Any remaining errors are entirely my own."
   },
   {
-    "objectID": "blog/AI/index.html",
-    "href": "blog/AI/index.html",
-    "title": "Generate images with OpenAI",
+    "objectID": "blog/LLM/index.html",
+    "href": "blog/LLM/index.html",
+    "title": "LLMs in R and Python",
     "section": "",
-    "text": "In this tutorial, we will explore how to generate images using OpenAI’s image generation API in R. The openai package provides a simple way to interact with OpenAI’s models, making it easy for R users to create AI-generated visuals. Whether you’re a data scientist, researcher, or hobbyist, this guide will help you get started with generating images programmatically."
+    "text": "R/Python users\nsome experience with coding\nused chatGPT/Claude in browser\nhave not used LLMs in code"
   },
   {
-    "objectID": "blog/AI/index.html#install-and-load-the-openai-package",
-    "href": "blog/AI/index.html#install-and-load-the-openai-package",
-    "title": "Generate images with OpenAI",
-    "section": "Install and Load the openai Package",
-    "text": "Install and Load the openai Package\nBefore we begin, make sure you have the openai package installed. If you haven’t installed it yet, you can do so using:\n\ninstall.packages(\"openai\", repos = \"https://cloud.r-project.org/\")\n\nLoad the package into your R session:\n\nlibrary(openai)"
+    "objectID": "blog/LLM/index.html#setting-up",
+    "href": "blog/LLM/index.html#setting-up",
+    "title": "LLMs in R and Python",
+    "section": "Setting Up",
+    "text": "Setting Up\nWe will use ellmer and dotenv packages in R to set things up. We use dotenv package to load our API keys.\n\ninstall.packages(c(\"ellmer\",\"dotenv\"))\n\nFirst we need to obtain API keys. Since OpenAI and Claude are not free, we will use “Gemini” and “Grok” in our examples\n\nobtain API keys and save in a .env file in the working directory as a key-value pair.\n\nGEMINI_API_KEY=your_key_here\nGROK_API_KEY=your_key_here\n\n# options(ellmer.model = ellmer::chat_groq())\nlibrary(ellmer)\nlibrary(dotenv)\noptions(ellmer.model = ellmer::chat_google_gemini())\n\nNow let us set the model and invoke the chat\n\n# chat_google_gemini(system_prompt = \"You are an experienced R Programmer. Give me only tidyverse codes. Also use proper linting and styling when giving codes\")\nclient &lt;- chat_google_gemini()\n\nUsing model = \"gemini-2.0-flash\".\n\n\nNow that we have invoked the chat, let us prompt something\n\nclient$chat(\"Summarize the plot of Romeo and Juliet in 20 words or less.\")\n\nTwo young lovers from feuding families, Romeo and Juliet, secretly marry and \ntragically kill themselves due to misunderstandings.\n\n\nWe can continue the conversation by calling the chat() again.\n\nclient$chat(\"Now Macbeth\")\n\nDriven by ambition and prophecy, Macbeth murders his way to the throne, but \nguilt and paranoia lead to his downfall and death.\n\n\nNow we can modify the system prompt and get better results\n\nchat_google_gemini(\n  system_prompt = \"You are well versed in literature. Give some lucid explanation of the literature in about 100 words\"\n)\n\n&lt;Chat Google/Gemini/gemini-2.0-flash turns=1 tokens=0/0 $0.00&gt;\n── system [0] ──────────────────────────────────────────────────────────────────\nYou are well versed in literature. Give some lucid explanation of the literature in about 100 words\n\nclient &lt;- chat_google_gemini()\nclient$chat(\"Summarize the plot of Romeo and Juliet\")\n\nRomeo and Juliet is a tragic love story about two young people from feuding \nfamilies in Verona, Italy. Romeo Montague and Juliet Capulet meet at a party \nand instantly fall in love. Unaware of each other's family affiliations, they \nare devastated to learn they are enemies. Despite this, they secretly pledge \ntheir love and are married by Friar Laurence, hoping their union will end the \nfamily feud.\n\nHowever, their bliss is short-lived. Romeo is banished from Verona after \nkilling Juliet's cousin, Tybalt, in a duel to avenge the death of his friend \nMercutio. Juliet's parents, unaware of her marriage to Romeo, arrange for her \nto marry Paris. Desperate to avoid this unwanted marriage, Juliet seeks help \nfrom Friar Laurence, who devises a plan: she will drink a potion that will make\nher appear dead, and Romeo will be alerted and retrieve her from the family \ntomb.\n\nUnfortunately, the message doesn't reach Romeo in time. He hears that Juliet is\ndead and, heartbroken, returns to Verona. He goes to Juliet's tomb, where he \nencounters Paris and kills him in a duel. Believing Juliet to be truly dead, \nRomeo drinks poison and dies beside her.\n\nJuliet awakens to find Romeo dead. Overwhelmed by grief and despair, she takes \nhis dagger and stabs herself.\n\nThe families arrive at the tomb and, witnessing the tragic outcome of their \nhatred, finally reconcile. They vow to honor Romeo and Juliet, acknowledging \nthe devastating consequences of their feud. The play ends with a solemn \nreminder of the cost of hatred and the power of love.\n\n\nwe can also use the interactive window for conversation.\n\nlive_browser(client)\n\nFurther,we can also save results of our chat.\n\nclient &lt;- chat_groq(\n  system_prompt = \"You are a friendly but terse assistant. You always use markdown syntax for code.\",\n)\n\n\n\n\n\n\n\n\nReply from chat using elmer\n\n\n\n\nUsing map Function in R\nThe map function is part of the purrr package in R, which provides a lot of functional programming tools. You can use map to apply a function to each element of a list or vector.\nExample\nlibrary(purrr)\n\n# Create a list of numbers\nnumbers &lt;- 1:5\n\n# Use map to square each number\nmap(numbers, ~ .x^2)\n#&gt; [[1]]\n#&gt; [1] 1\n#&gt; \n#&gt; [[2]]\n#&gt; [1] 4\n#&gt; \n#&gt; [[3]]\n#&gt; [1] 9\n#&gt; \n#&gt; [[4]]\n#&gt; [1] 16\n#&gt; \n#&gt; [[5]]\n#&gt; [1] 25\n\n\nComparison with lapply\nlapply is another function in R that applies a function to each element of a list or vector. Here’s an example:\nExample\nnumbers &lt;- 1:5\n\n# Use lapply to square each number\nlapply(numbers, function(x) x^2)\n#&gt; [[1]]\n#&gt; [1] 1\n#&gt; \n#&gt; [[2]]\n#&gt; [1] 4\n#&gt; \n#&gt; [[3]]\n#&gt; [1] 9\n#&gt; \n#&gt; [[4]]\n#&gt; [1] 16\n#&gt; \n#&gt; [[5]]\n#&gt; [1] 25\nAs you can see, both map and lapply produce the same output. The main difference is that map is more concise and expressive, while lapply is more verbose but provides more control over the iteration process.\nIn general, if you need to perform a simple operation on each element of a collection, map is a good choice. If you need more control or flexibility, lapply might be a better option."
   },
   {
-    "objectID": "blog/AI/index.html#setting-up-your-api-key",
-    "href": "blog/AI/index.html#setting-up-your-api-key",
-    "title": "Generate images with OpenAI",
-    "section": "Setting Up Your API Key",
-    "text": "Setting Up Your API Key\nTo use OpenAI’s API, you need an API key. If you haven’t already, sign up on OpenAI’s websitea and obtain your API key. Then, store it securely in your R session:\n\nSys.setenv(OPENAI_API_KEY = \"Your API Key\")\n\nAlternatively, you can store the key in an .Renviron file for persistent access."
+    "objectID": "blog/LLM/index.html#using-map-function-in-r",
+    "href": "blog/LLM/index.html#using-map-function-in-r",
+    "title": "LLMs in R and Python",
+    "section": "Using map Function in R",
+    "text": "Using map Function in R\nThe map function is part of the purrr package in R, which provides a lot of functional programming tools. You can use map to apply a function to each element of a list or vector.\nExample\nlibrary(purrr)\n\n# Create a list of numbers\nnumbers &lt;- 1:5\n\n# Use map to square each number\nmap(numbers, ~ .x^2)\n#&gt; [[1]]\n#&gt; [1] 1\n#&gt; \n#&gt; [[2]]\n#&gt; [1] 4\n#&gt; \n#&gt; [[3]]\n#&gt; [1] 9\n#&gt; \n#&gt; [[4]]\n#&gt; [1] 16\n#&gt; \n#&gt; [[5]]\n#&gt; [1] 25"
   },
   {
-    "objectID": "blog/AI/index.html#basic-image-generation",
-    "href": "blog/AI/index.html#basic-image-generation",
-    "title": "Generate images with OpenAI",
-    "section": "Basic Image Generation",
-    "text": "Basic Image Generation\nHere’s a simple example where we generate an image of a futuristic city:\n\nresponse &lt;- create_image(\n  prompt = \"a roman cat\",\n  n = 1,  # Number of images to generate\n  size = \"1024x1024\"  # Image size\n)\n\n# Print the response to get the image URL\nresponse$data$url"
+    "objectID": "blog/LLM/index.html#comparison-with-lapply",
+    "href": "blog/LLM/index.html#comparison-with-lapply",
+    "title": "LLMs in R and Python",
+    "section": "Comparison with lapply",
+    "text": "Comparison with lapply\nlapply is another function in R that applies a function to each element of a list or vector. Here’s an example:\nExample\nnumbers &lt;- 1:5\n\n# Use lapply to square each number\nlapply(numbers, function(x) x^2)\n#&gt; [[1]]\n#&gt; [1] 1\n#&gt; \n#&gt; [[2]]\n#&gt; [1] 4\n#&gt; \n#&gt; [[3]]\n#&gt; [1] 9\n#&gt; \n#&gt; [[4]]\n#&gt; [1] 16\n#&gt; \n#&gt; [[5]]\n#&gt; [1] 25\nAs you can see, both map and lapply produce the same output. The main difference is that map is more concise and expressive, while lapply is more verbose but provides more control over the iteration process.\nIn general, if you need to perform a simple operation on each element of a collection, map is a good choice. If you need more control or flexibility, lapply might be a better option."
   },
   {
-    "objectID": "blog/AI/index.html#customizing-the-output",
-    "href": "blog/AI/index.html#customizing-the-output",
-    "title": "Generate images with OpenAI",
-    "section": "Customizing the Output",
-    "text": "Customizing the Output\nYou can modify the n parameter to generate multiple images at once:\n\nresponse &lt;- create_image(\n  prompt = \"A cyberpunk-themed street with neon lights\",\n  n = 3,  # Generate three images\n  size = \"1024x1024\"\n)\n\n# View all generated image URLs\nresponse$data$url"
-  },
-  {
-    "objectID": "blog/index.html",
-    "href": "blog/index.html",
-    "title": "Blog",
-    "section": "",
-    "text": "Welcome to my Blog!!\nHere, I’ll share ideas, tips, and tricks on R programming, Statistics, Econometrics, Data Science, and a bit about running. Whether you’re interested in data or looking for running motivation, I hope you find something useful!\nPlease feel free to reach out to me!!\n\n\n\n\n\n\n    \n      \n      \n    \n\n\n\n\n\n\n\n\n\n\nGenerate images with OpenAI\n\n\n\n\n\n\nR\n\n\nOpenAI\n\n\nTutorial\n\n\n\n\n\n\n\n\n\nApr 5, 2025\n\n\n\n\n\n\n\n\n\n\n\n\nStreamlining R Workflows: A Practitioner’s Guide to Data Management\n\n\n\n\n\n\nR\n\n\nData Management\n\n\nTutorial\n\n\n\n\n\n\n\n\n\nApr 5, 2025\n\n\n\n\n\n\nNo matching items"
+    "objectID": "blog/LLM/index.html#export-chat",
+    "href": "blog/LLM/index.html#export-chat",
+    "title": "LLMs in R and Python",
+    "section": "Export chat",
+    "text": "Export chat\nEasily get a full markdown or HTML export of a conversation:\n\nchat.export(\"convo.md\", title=\"Python Q&A\")"
   },
   {
     "objectID": "index.html",
