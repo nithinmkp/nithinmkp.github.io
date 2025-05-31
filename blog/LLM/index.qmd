@@ -1,0 +1,196 @@
+---
+title: "LLMs in R and Python"
+date: 2025-05-31
+date-format: medium
+categories: [R,Python,AI, Tutorial]
+tags: [Data, R Programming,LLMs]
+toc: true
+author: Nithin M
+image: llm.png
+---
+
+# Audience
+- R/Python users
+- some experience with coding
+- used chatGPT/Claude in browser
+- have not used LLMs in code
+
+# Getting started
+
+We will use LLMs through HTTP APIs. 
+```{r}
+#| echo: false
+r_pkgs <- c(
+  ellmer = "https://ellmer.tidyverse.org/",
+  gander = "https://simonpcouch.github.io/gander/",
+  chores = "https://simonpcouch.github.io/chores/",
+  mall = "https://mlverse.github.io/mall/"
+)
+
+r_links <- glue::glue("[{names(r_pkgs)}]({r_pkgs})")
+py_link <- glue::glue("[chatlas](https://posit-dev.github.io/chatlas/)")
+```
+
+We will use the following packages:
+
+- R – `r glue::glue_collapse(r_links, sep = ", ", last = " and ")`
+- Python – `r py_link`
+
+# R
+## Setting Up
+We will use `ellmer` and `dotenv` packages in R to set things up. We use `dotenv` package to load our API keys. 
+
+```{r}
+#| eval: false
+#| message: false
+
+install.packages(c("ellmer","dotenv"))
+```
+
+First we need to obtain API keys. Since OpenAI and Claude are not free, we will use "Gemini" and "Grok" in our examples
+
+- obtain API keys and save in a `.env` file in the working directory as a key-value pair. 
+
+```
+GEMINI_API_KEY=your_key_here
+GROK_API_KEY=your_key_here
+```
+
+
+```{r}
+#| label: setting up R
+#| warning: false
+# options(ellmer.model = ellmer::chat_groq())
+library(ellmer)
+library(dotenv)
+options(ellmer.model = ellmer::chat_google_gemini())
+```
+
+Now let us set the model and invoke the chat
+
+```{r}
+# chat_google_gemini(system_prompt = "You are an experienced R Programmer. Give me only tidyverse codes. Also use proper linting and styling when giving codes")
+client <- chat_google_gemini()
+```
+
+Now that we have invoked the chat, let us prompt something
+
+```{r}
+client$chat("Summarize the plot of Romeo and Juliet in 20 words or less.")
+```
+
+We can continue the conversation by calling the `chat()` again.
+
+```{r}
+client$chat("Now Macbeth")
+```
+
+Now we can modify the system prompt and get better results
+
+```{r}
+#| message: false
+chat_google_gemini(
+  system_prompt = "You are well versed in literature. Give some lucid explanation of the literature in about 100 words"
+)
+client <- chat_google_gemini()
+client$chat("Summarize the plot of Romeo and Juliet")
+```
+
+we can also use the interactive window for conversation.
+
+```{r}
+#| eval: false
+live_browser(client)
+```
+Further,we can also save results of our chat.
+```{r}
+#| echo: false
+knitr::knit_engines$set(
+  elmer = function(options) {
+    if (isFALSE(options$eval)) {
+      return(knitr::engine_output(options, options$code, ""))
+    }
+    elmer_chatt <- options$chat
+    if (is.character(elmer_chatt)) {
+      elmer_chatt = get(elmer_chatt, envir = knitr::knit_global())
+    }
+    if (is.null(elmer_chatt)) {
+      stop("A chat_* object is required to use 'elmer' engine. See https://elmer.tidyverse.org/", call. = FALSE)
+    }
+    res <- elmer_chatt$chat(options$code)
+    # quarto context
+    if (!is.null(knitr::opts_knit$get('quarto.version'))) {
+      xfun::fenced_div(
+        attrs = ".callout-note",
+        c(
+          "## Reply from chat using `elmer`",
+          "", 
+          res
+        )
+      ) |> paste0(collapse = "\n") |> knitr::asis_output()
+    } else {
+      xfun::fenced_div(
+        attrs = '.elmer-output',
+        res
+      ) |> paste0(collapse = "\n") |> knitr::asis_output()
+    }
+  }
+)
+```
+
+```{r}
+#| message: false
+client <- chat_groq(
+  system_prompt = "You are a friendly but terse assistant. You always use markdown syntax for code.",
+)
+```
+
+```{elmer}
+#| chat: client
+"How can i use map function in R. show example of map vs lapply"
+```
+
+# Python
+In python, we use the `chatlas` package. But before using the pakage let us install the `dotenv` package in `python`.
+
+```{bash}
+#| eval: false
+
+pip install python-dotenv
+pip install -U chatlas
+```
+
+simmilar to `ellmer` in R, we invoke a chat object first.
+
+```{python}
+#| message: false
+#| eval: false
+
+from chatlas import ChatGroq
+from dotenv import load_dotenv
+load_dotenv() 
+
+client = ChatGroq()
+client.chat("Summarize the plot of Romeo and Juliet in 20 words or less.")
+```
+
+```
+Two young lovers from feuding families meet, secretly marry, and tragically
+die in a misunderstanding.
+```
+&nbsp;
+
+## Export chat
+Easily get a full markdown or HTML export of a conversation:
+
+```{python}
+#| eval: false
+chat.export("convo.md", title="Python Q&A")
+```
+
+
+# ✨ Wrapping Up
+Whether you're an R aficionado or a Pythonista, incorporating LLMs into your workflow is no longer a stretch. With just a few lines of setup, you're ready to bring powerful generative models into your daily analysis, documentation, or even code assistance.
+
+The possibilities are wide open. So —
+what will you ask your LLM next?

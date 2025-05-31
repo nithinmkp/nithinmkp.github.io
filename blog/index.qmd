@@ -2,6 +2,9 @@
 title: Blog
 listing: 
   contents: /
+  sort:
+    - "date"
+    - "title desc"
   type: default
   categories: true
   filter-ui: [title, date]

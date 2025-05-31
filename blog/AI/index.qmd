@@ -1,6 +1,6 @@
 ---
 title: Generate images with OpenAI
-date: today
+date: 2025-02-28
 date-format: medium
 categories: [R, OpenAI, Tutorial]
 tags: [AI, Image Generation, R Programming]
