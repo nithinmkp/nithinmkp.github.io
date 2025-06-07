@@ -80,7 +80,7 @@ ul.task-list li input[type="checkbox"] {
     }
 
     const options = {
-      valueNames: ['listing-date','listing-title','listing-author','listing-image','listing-description','listing-categories',{ data: ['index'] },{ data: ['categories'] },{ data: ['listing-date-sort'] },{ data: ['listing-file-modified-sort'] }],
+      valueNames: ['listing-date','listing-title','listing-author','listing-image','listing-description','listing-categories',{ data: ['index'] },{ data: ['categories'] },{ data: ['listing-date-sort'] }],
       
       searchColumns: ["listing-title","listing-date"],
     };
@@ -188,7 +188,7 @@ window.Quarto = {
 <!-- margin-sidebar -->
     <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
         
-    <h5 class="quarto-listing-category-title">Categories</h5><div class="quarto-listing-category category-default"><div class="category" data-category="">All <span class="quarto-category-count">(3)</span></div><div class="category" data-category="QUk=">AI <span class="quarto-category-count">(1)</span></div><div class="category" data-category="RGF0YSUyME1hbmFnZW1lbnQ=">Data Management <span class="quarto-category-count">(1)</span></div><div class="category" data-category="T3BlbkFJ">OpenAI <span class="quarto-category-count">(1)</span></div><div class="category" data-category="UHl0aG9u">Python <span class="quarto-category-count">(1)</span></div><div class="category" data-category="Ug==">R <span class="quarto-category-count">(3)</span></div><div class="category" data-category="VHV0b3JpYWw=">Tutorial <span class="quarto-category-count">(3)</span></div></div></div>
+    <h5 class="quarto-listing-category-title">Categories</h5><div class="quarto-listing-category category-default"><div class="category" data-category="">All <span class="quarto-category-count">(4)</span></div><div class="category" data-category="QUk=">AI <span class="quarto-category-count">(1)</span></div><div class="category" data-category="RGF0YSUyME1hbmFnZW1lbnQ=">Data Management <span class="quarto-category-count">(1)</span></div><div class="category" data-category="T3BlbkFJ">OpenAI <span class="quarto-category-count">(1)</span></div><div class="category" data-category="UHl0aG9u">Python <span class="quarto-category-count">(2)</span></div><div class="category" data-category="Ug==">R <span class="quarto-category-count">(4)</span></div><div class="category" data-category="VHV0b3JpYWw=">Tutorial <span class="quarto-category-count">(4)</span></div></div></div>
 <!-- main -->
 <main class="content column-page-left" id="quarto-document-content">
 
@@ -220,6 +220,22 @@ window.Quarto = {
 
 <div class="quarto-listing quarto-listing-container-default" id="listing-listing">
 <div class="listing-actions-group">
+   <div class="input-group input-group-sm quarto-listing-sort">
+     <span class="input-group-text"><i class="bi bi-sort-down"></i></span>
+     <select id="listing-listing-sort" class="form-select" aria-label="Order By" onchange="window['quarto-listings']['listing-listing'].sort(this.options[this.selectedIndex].value, { order: this.options[this.selectedIndex].getAttribute('data-direction')})">
+       <option value="" disabled="" selected="" hidden="">Order By</option>
+       <option value="index" data-direction="asc">Default</option>
+         <option value="listing-title" data-direction="asc">
+          Title
+        </option>
+         <option value="listing-date-sort" data-direction="asc">
+          Date - Oldest
+        </option>
+         <option value="listing-date-sort" data-direction="desc">
+          Date - Newest
+        </option>
+     </select>
+  </div>
     <div class="input-group input-group-sm quarto-listing-filter">
       <span class="input-group-text"><i class="bi bi-search"></i></span>
       <input type="text" class="search form-control" placeholder="Filter">
@@ -262,45 +278,7 @@ Feb 28, 2025
 </a>
 </div>
 </div>
-<div class="quarto-post image-right" data-index="1" data-categories="UiUyQ0RhdGElMjBNYW5hZ2VtZW50JTJDVHV0b3JpYWw=" data-listing-date-sort="1743100200000" data-listing-file-modified-sort="1748659258356" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="12" data-listing-word-count-sort="2389">
-<div class="thumbnail">
-<p><a href="../blog/Data/index.html" class="no-external"></a></p><a href="../blog/Data/index.html" class="no-external">
-<p><img loading="lazy" src="../blog/Data/data.jpeg" class="thumbnail-image"></p>
-</a><p><a href="../blog/Data/index.html" class="no-external"></a></p>
-</div>
-<div class="body">
-<h3 class="no-anchor listing-title">
-<a href="../blog/Data/index.html" class="no-external">Streamlining R Workflows: A Practitioner’s Guide to Data Management</a>
-</h3>
-<div class="listing-subtitle">
-<a href="../blog/Data/index.html" class="no-external"></a>
-</div>
-<div class="listing-categories">
-<div class="listing-category" onclick="window.quartoListingCategory('Ug=='); return false;">
-R
-</div>
-<div class="listing-category" onclick="window.quartoListingCategory('RGF0YSUyME1hbmFnZW1lbnQ='); return false;">
-Data Management
-</div>
-<div class="listing-category" onclick="window.quartoListingCategory('VHV0b3JpYWw='); return false;">
-Tutorial
-</div>
-</div>
-<div class="listing-description">
-<a href="../blog/Data/index.html" class="no-external"><em>If the first line of your R script is</em><br>
-<code>setwd("C:\\Users\\jenny\\path\\that\\only\\I\\have")</code><br>
-<em>I will come into your office and SET YOUR COMPUTER ON FIRE 🔥.</em></a>
-</div>
-</div>
-<div class="metadata">
-<a href="../blog/Data/index.html" class="no-external">
-<div class="listing-date">
-Mar 28, 2025
-</div>
-</a>
-</div>
-</div>
-<div class="quarto-post image-right" data-index="2" data-categories="UiUyQ1B5dGhvbiUyQ0FJJTJDVHV0b3JpYWw=" data-listing-date-sort="1748629800000" data-listing-file-modified-sort="1748659882044" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="4" data-listing-word-count-sort="681">
+<div class="quarto-post image-right" data-index="1" data-categories="UiUyQ1B5dGhvbiUyQ0FJJTJDVHV0b3JpYWw=" data-listing-date-sort="1748629800000" data-listing-file-modified-sort="1748659882044" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="4" data-listing-word-count-sort="681">
 <div class="thumbnail">
 <p><a href="../blog/LLM/index.html" class="no-external"></a></p><a href="../blog/LLM/index.html" class="no-external">
 <p><img loading="lazy" src="../blog/LLM/llm.png" class="thumbnail-image"></p>
@@ -338,6 +316,80 @@ May 31, 2025
 </div>
 <div class="listing-author">
 Nithin M
+</div>
+</a>
+</div>
+</div>
+<div class="quarto-post image-right" data-index="2" data-categories="UiUyQ0RhdGElMjBNYW5hZ2VtZW50JTJDVHV0b3JpYWw=" data-listing-date-sort="1743100200000" data-listing-file-modified-sort="1749311410139" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="12" data-listing-word-count-sort="2389">
+<div class="thumbnail">
+<p><a href="../blog/Data/data.html" class="no-external"></a></p><a href="../blog/Data/data.html" class="no-external">
+<p><img loading="lazy" src="../blog/Data/data.jpeg" class="thumbnail-image"></p>
+</a><p><a href="../blog/Data/data.html" class="no-external"></a></p>
+</div>
+<div class="body">
+<h3 class="no-anchor listing-title">
+<a href="../blog/Data/data.html" class="no-external">Streamlining R Workflows: A Practitioner’s Guide to Data Management</a>
+</h3>
+<div class="listing-subtitle">
+<a href="../blog/Data/data.html" class="no-external"></a>
+</div>
+<div class="listing-categories">
+<div class="listing-category" onclick="window.quartoListingCategory('Ug=='); return false;">
+R
+</div>
+<div class="listing-category" onclick="window.quartoListingCategory('RGF0YSUyME1hbmFnZW1lbnQ='); return false;">
+Data Management
+</div>
+<div class="listing-category" onclick="window.quartoListingCategory('VHV0b3JpYWw='); return false;">
+Tutorial
+</div>
+</div>
+<div class="listing-description">
+<a href="../blog/Data/data.html" class="no-external"><em>If the first line of your R script is</em><br>
+<code>setwd("C:\\Users\\jenny\\path\\that\\only\\I\\have")</code><br>
+<em>I will come into your office and SET YOUR COMPUTER ON FIRE 🔥.</em></a>
+</div>
+</div>
+<div class="metadata">
+<a href="../blog/Data/data.html" class="no-external">
+<div class="listing-date">
+Mar 28, 2025
+</div>
+</a>
+</div>
+</div>
+<div class="quarto-post image-right" data-index="3" data-categories="UiUyQ1B5dGhvbiUyQ1R1dG9yaWFs" data-listing-date-sort="1749234600000" data-listing-file-modified-sort="1749311960311" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="3" data-listing-word-count-sort="485">
+<div class="thumbnail">
+<p><a href="../blog/Data/speed.html" class="no-external"></a></p><a href="../blog/Data/speed.html" class="no-external">
+<p><img loading="lazy" src="../blog/Data/speed.png" class="thumbnail-image"></p>
+</a><p><a href="../blog/Data/speed.html" class="no-external"></a></p>
+</div>
+<div class="body">
+<h3 class="no-anchor listing-title">
+<a href="../blog/Data/speed.html" class="no-external">Testing Python vs R</a>
+</h3>
+<div class="listing-subtitle">
+<a href="../blog/Data/speed.html" class="no-external"></a>
+</div>
+<div class="listing-categories">
+<div class="listing-category" onclick="window.quartoListingCategory('Ug=='); return false;">
+R
+</div>
+<div class="listing-category" onclick="window.quartoListingCategory('UHl0aG9u'); return false;">
+Python
+</div>
+<div class="listing-category" onclick="window.quartoListingCategory('VHV0b3JpYWw='); return false;">
+Tutorial
+</div>
+</div>
+<div class="listing-description">
+<a href="../blog/Data/speed.html" class="no-external">As data analysts and researchers, we often toggle between R and Python. But how do they compare in terms of raw speed—especially for common tasks like grouped aggregation?</a>
+</div>
+</div>
+<div class="metadata">
+<a href="../blog/Data/speed.html" class="no-external">
+<div class="listing-date">
+Jun 7, 2025
 </div>
 </a>
 </div>
