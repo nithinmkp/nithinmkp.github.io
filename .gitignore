@@ -2,3 +2,7 @@
 
 .env
 /blog/LLM/.env
+
+/.venv
+
+/blog/Data/nba_aa_elo.csv

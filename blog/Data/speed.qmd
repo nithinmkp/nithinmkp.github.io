@@ -1,0 +1,196 @@
+---
+title: "Testing Python vs R"
+date: "2025-06-07"
+date-format: medium
+categories: [R, Python, Tutorial]
+tags: [Data, R Programming, Python]
+toc: true
+image: speed.png
+---
+
+```{python}
+#| label: Python set up
+#| echo: false
+
+import polars as pl
+from ttictoc import tic,toc
+import time
+import pandas as pd
+```
+
+```{r}
+#| label: R set up
+#| echo: false
+#| message: false
+#| warning: false
+
+if(!require("pacman"))install.packages("pacman")
+pacman::p_load(readr,dplyr,polars,tidypolars,tictoc,reticulate,data.table,quarto)
+use_virtualenv(here::here(".venv"))
+```
+
+```{r}
+#| echo: false
+
+nba_dim <- dim(read.csv("nba_all_elo.csv"))
+a <- sessionInfo()
+```
+
+As data analysts and researchers, we often toggle between R and Python. But how do they compare in terms of raw speed—especially for common tasks like grouped aggregation?
+
+In this post, I benchmark different approaches using both R and Python, including base R, tidyverse, data.table, pandas, and polars. I also experiment with calling Python's Polars from within R using reticulate, just to see if inter-language calls come with performance penalties—or surprises.
+
+Let’s dive in.
+
+## The Setup
+The dataset I’m using is `nba_all_elo.csv`. You can get the data [here]("https://raw.githubusercontent.com/fivethirtyeight/data/master/nba-elo/nbaallelo.csv") It contains Elo ratings and predictions for thousands of NBA games. This data has `r nba_dim[1]` rows and `r nba_dim[2]` columns. 
+
+::: {.panel-tabset}
+## Base- R
+
+```{r}
+tic()
+nba_base <- read.csv("nba_all_elo.csv")
+
+result <- aggregate(forecast ~ game_result, data = nba_base, FUN = mean)
+names(result)[2] <- "avg_points"
+toc()
+```
+
+## R - Tidyverse
+```{r}
+tic()
+nba_r <- read_csv("nba_all_elo.csv")
+nba_r |>
+  summarise(avg_points = mean(forecast), .by = "game_result")
+toc()
+```
+
+## Python - Polars
+
+```{python}
+start = time.perf_counter()
+df = pl.read_csv("nba_all_elo.csv")
+result = df.group_by("game_result").agg(pl.col("forecast").mean().alias("avg_points"))
+result
+end = time.perf_counter()
+
+print(f"Elapsed time: {end - start:.6f} seconds")
+```
+
+## Python - Pandas
+
+```{python}
+start = time.perf_counter()
+df = pd.read_csv("nba_all_elo.csv")
+result = df.groupby("game_result", as_index=False)["forecast"].mean()
+result.rename(columns={"forecast": "avg_points"}, inplace=True)
+end = time.perf_counter()
+
+print(f"Elapsed time: {end - start:.6f} seconds")
+```
+
+## Polars in R
+
+```{r}
+tic()
+nba_p <- pl$read_csv("nba_all_elo.csv")
+nba_p$group_by(pl$col("game_result"))$agg(
+  pl$col("forecast")$mean()$alias("avg_points")
+)
+toc()
+```
+
+## Polars inside R
+
+```{r}
+
+# This is Python code inside R
+py_run_string(
+  "
+start = time.perf_counter()
+import polars as pl
+nba_data = pl.read_csv('nba_all_elo.csv')
+result = nba_data.group_by('game_result').agg(
+    pl.col('forecast').mean().alias('avg_points')
+)
+result
+end = time.perf_counter()
+
+print(f'Elapsed time: {end - start:.6f} seconds')
+"
+)
+
+```
+
+## R - data.table
+```{r}
+tic()
+# Read CSV and convert to data.table
+nba_dt <- fread("nba_all_elo.csv")
+
+# Grouped aggregation
+result <- nba_dt[,
+  .(avg_points = mean(forecast, na.rm = TRUE)),
+  by = game_result
+]
+toc()
+```
+
+:::
+
+## Key Takeaways
+Here’s what stood out from the benchmarks:
+
+✅ Polars in R is the fastest option available.  `data.table` is fast option but often comes at the cost of syntax which I am not comfortable with. It comfortably outsmarts both base R and the tidyverse.
+
+✅ Polars is blazingly fast often 5–10x faster than Pandas or Tidyverse.
+
+✅ Surprise! When I invoked Python’s Polars from within R via reticulate, it was marginally faster than running the same code directly in Python. This may be due to JIT caching or differences in Quarto execution context—but it’s worth investigating further.
+
+## Final Thoughts
+So, if performance is your priority:
+
+- Use Polars in R.
+
+- Use polars in Python—or even inside R if you’re already mixing languages.
+
+- Avoid tidyverse for speed-critical tasks, unless readability is your goal.
+
+ With tools like reticulate and quarto, we can blend strengths across ecosystems—without giving up speed. These tools help us to get the best of both worlds.
+
+This document was built with R version `r getRversion()` and Python version `r py_config()$version`.
+
+:::{.callout-tip collapse="true"}
+# Session Info
+## R
+```{r, echo = FALSE}
+library(sessioninfo)
+# save the session info as an object
+pkg_sesh <- session_info(pkgs = "attached")
+
+# get the quarto version
+quarto_version <- system("quarto --version", intern = TRUE)
+
+# inject the quarto info
+pkg_sesh$platform$quarto <- paste(
+  system("quarto --version", intern = TRUE),
+  "@",
+  quarto::quarto_path()
+)
+
+# print it out
+pkg_sesh
+```
+
+## Python
+
+```{python}
+#| echo: false
+print("pandas:", pd.__version__)
+print("polars:", pl.__version__)
+
+```
+
+:::
+

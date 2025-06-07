@@ -3,8 +3,9 @@
     "listing": "/blog/index.html",
     "items": [
       "/blog/AI/index.html",
-      "/blog/Data/index.html",
-      "/blog/LLM/index.html"
+      "/blog/LLM/index.html",
+      "/blog/Data/data.html",
+      "/blog/Data/speed.html"
     ]
   }
 ]
