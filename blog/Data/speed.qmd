@@ -16,6 +16,7 @@ import polars as pl
 from ttictoc import tic,toc
 import time
 import pandas as pd
+import timeit
 ```
 
 ```{r}
@@ -25,7 +26,7 @@ import pandas as pd
 #| warning: false
 
 if(!require("pacman"))install.packages("pacman")
-pacman::p_load(readr,dplyr,polars,tidypolars,tictoc,reticulate,data.table,quarto)
+pacman::p_load(readr,dplyr,polars,tidypolars,tictoc,reticulate,data.table,quarto,bench)
 use_virtualenv(here::here(".venv"))
 ```
 
@@ -45,96 +46,105 @@ Let’s dive in.
 ## The Setup
 The dataset I’m using is `nba_all_elo.csv`. You can get the data [here]("https://raw.githubusercontent.com/fivethirtyeight/data/master/nba-elo/nbaallelo.csv") It contains Elo ratings and predictions for thousands of NBA games. This data has `r nba_dim[1]` rows and `r nba_dim[2]` columns. 
 
+
 ::: {.panel-tabset}
 ## Base- R
 
 ```{r}
-tic()
-nba_base <- read.csv("nba_all_elo.csv")
-
-result <- aggregate(forecast ~ game_result, data = nba_base, FUN = mean)
-names(result)[2] <- "avg_points"
-toc()
+bench::mark(
+  base_r = {
+    nba <- read.csv("nba_all_elo.csv")
+    aggregate(forecast ~ game_result, data = nba, FUN = mean)
+  },
+  iterations = 10,
+  check = FALSE
+)
 ```
 
 ## R - Tidyverse
 ```{r}
-tic()
-nba_r <- read_csv("nba_all_elo.csv")
-nba_r |>
-  summarise(avg_points = mean(forecast), .by = "game_result")
-toc()
+#| message: false
+#| warning: false
+
+bench::mark(
+  tidyverse = {
+    read_csv("nba_all_elo.csv") |>
+      summarise(avg_points = mean(forecast), .by = game_result)
+  },
+  iterations = 10,
+  check = FALSE
+)
 ```
 
 ## Python - Polars
 
 ```{python}
-start = time.perf_counter()
-df = pl.read_csv("nba_all_elo.csv")
-result = df.group_by("game_result").agg(pl.col("forecast").mean().alias("avg_points"))
-result
-end = time.perf_counter()
-
-print(f"Elapsed time: {end - start:.6f} seconds")
+polars_stmt = """
+import polars as pl
+df = pl.read_csv('nba_all_elo.csv')
+df.group_by('game_result').agg(pl.col('forecast').mean().alias('avg_points'))
+"""
+polars_time = timeit.timeit(stmt=polars_stmt, number=10) / 10
+print(f"Polars avg time over 10 runs: {polars_time:.6f} sec")
 ```
 
 ## Python - Pandas
 
 ```{python}
-start = time.perf_counter()
-df = pd.read_csv("nba_all_elo.csv")
-result = df.groupby("game_result", as_index=False)["forecast"].mean()
-result.rename(columns={"forecast": "avg_points"}, inplace=True)
-end = time.perf_counter()
-
-print(f"Elapsed time: {end - start:.6f} seconds")
+pandas_stmt = """
+import pandas as pd
+df = pd.read_csv('nba_all_elo.csv')
+df.groupby('game_result', as_index=False)["forecast"].mean()
+"""
+pandas_time = timeit.timeit(stmt=pandas_stmt, number=10) / 10
+print(f"Pandas avg time over 10 runs: {pandas_time:.6f} sec")
 ```
 
 ## Polars in R
 
 ```{r}
-tic()
-nba_p <- pl$read_csv("nba_all_elo.csv")
-nba_p$group_by(pl$col("game_result"))$agg(
-  pl$col("forecast")$mean()$alias("avg_points")
+bench::mark(
+  r_polars = {
+    df <- pl$read_csv("nba_all_elo.csv")
+    df$group_by("game_result")$agg(
+      pl$col("forecast")$mean()$alias("avg_points")
+    )
+  },
+  iterations = 10,
+  check = FALSE
 )
-toc()
 ```
 
 ## Polars inside R
 
 ```{r}
-
-# This is Python code inside R
-py_run_string(
-  "
-start = time.perf_counter()
+bench::mark(
+  py_polars_in_r = {
+    py_run_string(
+      "
 import polars as pl
-nba_data = pl.read_csv('nba_all_elo.csv')
-result = nba_data.group_by('game_result').agg(
-    pl.col('forecast').mean().alias('avg_points')
+df = pl.read_csv('nba_all_elo.csv')
+df.group_by('game_result').agg(
+  pl.col('forecast').mean().alias('avg_points')
 )
-result
-end = time.perf_counter()
-
-print(f'Elapsed time: {end - start:.6f} seconds')
-"
+      "
+    )
+  },
+  iterations = 10,
+  check = FALSE
 )
-
 ```
 
 ## R - data.table
 ```{r}
-tic()
-# Read CSV and convert to data.table
-nba_dt <- fread("nba_all_elo.csv")
-
-# Grouped aggregation
-result <- nba_dt[,
-  .(avg_points = mean(forecast, na.rm = TRUE)),
-  by = game_result
-]
-toc()
+bench::mark(
+  data_table = {
+    dt <- fread("nba_all_elo.csv")
+    dt[, .(avg_points = mean(forecast, na.rm = TRUE)), by = game_result]
+  },
+  iterations = 10,
+  check = FALSE
+)
 ```
 
 :::
@@ -146,7 +156,7 @@ Here’s what stood out from the benchmarks:
 
 ✅ Polars is blazingly fast often 5–10x faster than Pandas or Tidyverse.
 
-✅ Surprise! When I invoked Python’s Polars from within R via reticulate, it was marginally faster than running the same code directly in Python. This may be due to JIT caching or differences in Quarto execution context—but it’s worth investigating further.
+✅ Surprise! When I invoked Python’s Polars from within R via reticulate, it was as fast as running the same code directly in Python. 
 
 ## Final Thoughts
 So, if performance is your priority:
