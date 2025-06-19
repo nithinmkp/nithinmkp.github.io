@@ -19,11 +19,11 @@ website:
         href: contact.qmd
   page-footer: 
     background: "#eeffee"
-  
-      
 format:
   html:
     backgroundcolor: "#eeffee"
     fontsize: 20px
     theme: [cosmo, styles.scss]
+execute:
+  cache: true
 

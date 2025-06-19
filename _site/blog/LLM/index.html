@@ -271,16 +271,16 @@ GROK_API_KEY=your_key_here</code></pre>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb6"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a>client<span class="sc">$</span><span class="fu">chat</span>(<span class="st">"Summarize the plot of Romeo and Juliet in 20 words or less."</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>Two young lovers from feuding families, Romeo and Juliet, secretly marry and 
-tragically kill themselves due to misunderstandings.</code></pre>
+<pre><code>Forbidden love between feuding families leads to tragic deaths of Romeo and 
+Juliet, ending the bitter conflict.</code></pre>
 </div>
 </div>
 <p>We can continue the conversation by calling the <code>chat()</code> again.</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb8"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a>client<span class="sc">$</span><span class="fu">chat</span>(<span class="st">"Now Macbeth"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>Driven by ambition and prophecy, Macbeth murders his way to the throne, but 
-guilt and paranoia lead to his downfall and death.</code></pre>
+<pre><code>Driven by ambition and prophecy, Macbeth murders his king, becomes a tyrant, 
+and meets a bloody end.</code></pre>
 </div>
 </div>
 <p>Now we can modify the system prompt and get better results</p>
@@ -297,32 +297,35 @@ You are well versed in literature. Give some lucid explanation of the literature
 <span id="cb12-2"><a href="#cb12-2" aria-hidden="true" tabindex="-1"></a>client<span class="sc">$</span><span class="fu">chat</span>(<span class="st">"Summarize the plot of Romeo and Juliet"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>Romeo and Juliet is a tragic love story about two young people from feuding 
-families in Verona, Italy. Romeo Montague and Juliet Capulet meet at a party 
-and instantly fall in love. Unaware of each other's family affiliations, they 
-are devastated to learn they are enemies. Despite this, they secretly pledge 
-their love and are married by Friar Laurence, hoping their union will end the 
-family feud.
+families, the Montagues and the Capulets, who fall deeply in love.
 
-However, their bliss is short-lived. Romeo is banished from Verona after 
-killing Juliet's cousin, Tybalt, in a duel to avenge the death of his friend 
-Mercutio. Juliet's parents, unaware of her marriage to Romeo, arrange for her 
-to marry Paris. Desperate to avoid this unwanted marriage, Juliet seeks help 
-from Friar Laurence, who devises a plan: she will drink a potion that will make
-her appear dead, and Romeo will be alerted and retrieve her from the family 
-tomb.
+*   **The Feud:** The play opens with a violent street brawl between the two 
+families, highlighting their long-standing animosity.
+*   **Love at First Sight:** Romeo, a Montague, attends a Capulet ball and 
+instantly falls in love with Juliet, a Capulet. They are unaware of each 
+other's family affiliation.
+*   **Secret Marriage:** Despite their families' hatred, Romeo and Juliet 
+declare their love and secretly marry with the help of Friar Laurence.
+*   **Tragedy Strikes:** A fight breaks out between Romeo's friend Mercutio and
+Juliet's cousin Tybalt. Romeo tries to stop them, but Tybalt kills Mercutio. 
+Enraged, Romeo kills Tybalt and is banished from Verona by the Prince.
+*   **Desperate Measures:** Juliet's parents, unaware of her marriage to Romeo,
+arrange for her to marry Paris. Desperate to avoid this, Juliet seeks help from
+Friar Laurence. He devises a plan for her to take a potion that will make her 
+appear dead, so she can avoid the marriage and reunite with Romeo.
+*   **Miscommunication:** The message about Juliet's staged death doesn't reach
+Romeo in time. Believing Juliet is truly dead, Romeo returns to Verona and goes
+to Juliet's tomb.
+*   **The Double Suicide:** In the tomb, Romeo kills Paris, who is also there 
+to mourn Juliet. Overcome with grief, Romeo drinks poison and dies. When Juliet
+awakens and finds Romeo dead, she takes his dagger and kills herself.
+*   **Reconciliation:** The families arrive to find their children dead. Friar 
+Laurence explains the events that led to the tragedy. Overwhelmed with remorse,
+the Montagues and Capulets finally reconcile, ending their feud.
 
-Unfortunately, the message doesn't reach Romeo in time. He hears that Juliet is
-dead and, heartbroken, returns to Verona. He goes to Juliet's tomb, where he 
-encounters Paris and kills him in a duel. Believing Juliet to be truly dead, 
-Romeo drinks poison and dies beside her.
-
-Juliet awakens to find Romeo dead. Overwhelmed by grief and despair, she takes 
-his dagger and stabs herself.
-
-The families arrive at the tomb and, witnessing the tragic outcome of their 
-hatred, finally reconcile. They vow to honor Romeo and Juliet, acknowledging 
-the devastating consequences of their feud. The play ends with a solemn 
-reminder of the cost of hatred and the power of love.</code></pre>
+In short, Romeo and Juliet is a story of passionate love thwarted by familial 
+hatred, leading to the tragic deaths of both lovers. Their deaths ultimately 
+bring peace to their feuding families.</code></pre>
 </div>
 </div>
 <p>we can also use the interactive window for conversation.</p>
@@ -346,57 +349,68 @@ Reply from chat using <code>elmer</code>
 </div>
 </div>
 <div class="callout-body-container callout-body">
-<section id="using-map-function-in-r" class="level2">
-<h2 class="anchored" data-anchor-id="using-map-function-in-r"><strong>Using <code>map</code> Function in R</strong></h2>
-<p>The <code>map</code> function is part of the <code>purrr</code> package in R, which provides a lot of functional programming tools. You can use <code>map</code> to apply a function to each element of a list or vector.</p>
-<p><strong>Example</strong></p>
-<pre><code>library(purrr)
+<p><strong>Using the <code>map</code> Function in R</strong></p>
+<p>The <code>map</code> function is part of the <code>purrr</code> package in R, which provides a composable functional programming pipeline. It applies a function to each element of an input vector or list, returning a list with the same length as the input.</p>
+<p>Here’s an example:</p>
+<div class="sourceCode" id="cb16"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(purrr)</span>
+<span id="cb16-2"><a href="#cb16-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb16-3"><a href="#cb16-3" aria-hidden="true" tabindex="-1"></a><span class="co"># Create a list of numbers</span></span>
+<span id="cb16-4"><a href="#cb16-4" aria-hidden="true" tabindex="-1"></a>numbers <span class="ot">&lt;-</span> <span class="fu">list</span>(<span class="at">a =</span> <span class="dv">1</span>, <span class="at">b =</span> <span class="dv">2</span>, <span class="at">c =</span> <span class="dv">3</span>, <span class="at">d =</span> <span class="dv">4</span>)</span>
+<span id="cb16-5"><a href="#cb16-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb16-6"><a href="#cb16-6" aria-hidden="true" tabindex="-1"></a><span class="co"># Double each number using map</span></span>
+<span id="cb16-7"><a href="#cb16-7" aria-hidden="true" tabindex="-1"></a>result <span class="ot">&lt;-</span> <span class="fu">map</span>(numbers, <span class="sc">~</span> .x <span class="sc">*</span> <span class="dv">2</span>)</span>
+<span id="cb16-8"><a href="#cb16-8" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb16-9"><a href="#cb16-9" aria-hidden="true" tabindex="-1"></a><span class="co"># Print the result</span></span>
+<span id="cb16-10"><a href="#cb16-10" aria-hidden="true" tabindex="-1"></a>result</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>Output:</p>
+<pre><code>$a 
+[1] 2
 
-# Create a list of numbers
-numbers &lt;- 1:5
+$b 
+[1] 4
 
-# Use map to square each number
-map(numbers, ~ .x^2)
-#&gt; [[1]]
-#&gt; [1] 1
-#&gt; 
-#&gt; [[2]]
-#&gt; [1] 4
-#&gt; 
-#&gt; [[3]]
-#&gt; [1] 9
-#&gt; 
-#&gt; [[4]]
-#&gt; [1] 16
-#&gt; 
-#&gt; [[5]]
-#&gt; [1] 25</code></pre>
-</section>
-<section id="comparison-with-lapply" class="level2">
-<h2 class="anchored" data-anchor-id="comparison-with-lapply"><strong>Comparison with <code>lapply</code></strong></h2>
-<p><code>lapply</code> is another function in R that applies a function to each element of a list or vector. Here’s an example:</p>
-<p><strong>Example</strong></p>
-<pre><code>numbers &lt;- 1:5
+$c 
+[1] 6
 
-# Use lapply to square each number
-lapply(numbers, function(x) x^2)
-#&gt; [[1]]
-#&gt; [1] 1
-#&gt; 
-#&gt; [[2]]
-#&gt; [1] 4
-#&gt; 
-#&gt; [[3]]
-#&gt; [1] 9
-#&gt; 
-#&gt; [[4]]
-#&gt; [1] 16
-#&gt; 
-#&gt; [[5]]
-#&gt; [1] 25</code></pre>
-<p>As you can see, both <code>map</code> and <code>lapply</code> produce the same output. The main difference is that <code>map</code> is more concise and expressive, while <code>lapply</code> is more verbose but provides more control over the iteration process.</p>
-<p>In general, if you need to perform a simple operation on each element of a collection, <code>map</code> is a good choice. If you need more control or flexibility, <code>lapply</code> might be a better option.</p>
-</section>
+$d 
+[1] 8</code></pre>
+<p><strong>Comparing <code>map</code> with <code>lapply</code></strong></p>
+<p><code>lapply</code> is a built-in R function that applies a function to each element of a list and returns a list. Here’s an example:</p>
+<div class="sourceCode" id="cb18"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb18-1"><a href="#cb18-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Double each number using lapply</span></span>
+<span id="cb18-2"><a href="#cb18-2" aria-hidden="true" tabindex="-1"></a>result <span class="ot">&lt;-</span> <span class="fu">lapply</span>(numbers, <span class="cf">function</span>(x) x <span class="sc">*</span> <span class="dv">2</span>)</span>
+<span id="cb18-3"><a href="#cb18-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb18-4"><a href="#cb18-4" aria-hidden="true" tabindex="-1"></a><span class="co"># Print the result</span></span>
+<span id="cb18-5"><a href="#cb18-5" aria-hidden="true" tabindex="-1"></a>result</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>Output:</p>
+<pre><code>$a 
+[1] 2
+
+$b 
+[1] 4
+
+$c 
+[1] 6
+
+$d 
+[1] 8</code></pre>
+<p>As you can see, both <code>map</code> and <code>lapply</code> produce the same result in this example. However, <code>map</code> is generally more concise and expressive, especially when dealing with complex data structures or pipelines.</p>
+<p><strong>Key differences:</strong></p>
+<ul>
+<li><code>map</code> is part of the <code>purrr</code> package, while <code>lapply</code> is a built-in R function.</li>
+<li><code>map</code> is more concise and expressive, making it a popular choice for functional programming in R.</li>
+<li><code>lapply</code> is more flexible, as it can handle vectors and other types of input, whereas <code>map</code> is limited to lists and vectors.</li>
+</ul>
+<p>Choose <code>map</code> when:</p>
+<ul>
+<li>You need to perform a simple transformation on each element of a list or vector.</li>
+<li>You want to leverage the concise syntax and expressiveness of functional programming.</li>
+</ul>
+<p>Choose <code>lapply</code> when:</p>
+<ul>
+<li>You need to perform a more complex operation that involves manipulating the index, such as using <code>lapply</code> with a named list.</li>
+<li>You prefer a more traditional, R-style syntax for applying a function to a list.</li>
+</ul>
+<p>I hope this helps!</p>
 </div>
 </div>
 </div>
@@ -406,17 +420,17 @@ lapply(numbers, function(x) x^2)
 <h1>Python</h1>
 <p>In python, we use the <code>chatlas</code> package. But before using the pakage let us install the <code>dotenv</code> package in <code>python</code>.</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb18"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb18-1"><a href="#cb18-1" aria-hidden="true" tabindex="-1"></a><span class="ex">pip</span> install python-dotenv</span>
-<span id="cb18-2"><a href="#cb18-2" aria-hidden="true" tabindex="-1"></a><span class="ex">pip</span> install <span class="at">-U</span> chatlas</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb20"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb20-1"><a href="#cb20-1" aria-hidden="true" tabindex="-1"></a><span class="ex">pip</span> install python-dotenv</span>
+<span id="cb20-2"><a href="#cb20-2" aria-hidden="true" tabindex="-1"></a><span class="ex">pip</span> install <span class="at">-U</span> chatlas</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <p>simmilar to <code>ellmer</code> in R, we invoke a chat object first.</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb19"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb19-1"><a href="#cb19-1" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> chatlas <span class="im">import</span> ChatGroq</span>
-<span id="cb19-2"><a href="#cb19-2" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> dotenv <span class="im">import</span> load_dotenv</span>
-<span id="cb19-3"><a href="#cb19-3" aria-hidden="true" tabindex="-1"></a>load_dotenv() </span>
-<span id="cb19-4"><a href="#cb19-4" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb19-5"><a href="#cb19-5" aria-hidden="true" tabindex="-1"></a>client <span class="op">=</span> ChatGroq()</span>
-<span id="cb19-6"><a href="#cb19-6" aria-hidden="true" tabindex="-1"></a>client.chat(<span class="st">"Summarize the plot of Romeo and Juliet in 20 words or less."</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb21"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb21-1"><a href="#cb21-1" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> chatlas <span class="im">import</span> ChatGroq</span>
+<span id="cb21-2"><a href="#cb21-2" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> dotenv <span class="im">import</span> load_dotenv</span>
+<span id="cb21-3"><a href="#cb21-3" aria-hidden="true" tabindex="-1"></a>load_dotenv() </span>
+<span id="cb21-4"><a href="#cb21-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb21-5"><a href="#cb21-5" aria-hidden="true" tabindex="-1"></a>client <span class="op">=</span> ChatGroq()</span>
+<span id="cb21-6"><a href="#cb21-6" aria-hidden="true" tabindex="-1"></a>client.chat(<span class="st">"Summarize the plot of Romeo and Juliet in 20 words or less."</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <pre><code>Two young lovers from feuding families meet, secretly marry, and tragically
 die in a misunderstanding.</code></pre>
@@ -425,7 +439,7 @@ die in a misunderstanding.</code></pre>
 <h2 class="anchored" data-anchor-id="export-chat">Export chat</h2>
 <p>Easily get a full markdown or HTML export of a conversation:</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb21"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb21-1"><a href="#cb21-1" aria-hidden="true" tabindex="-1"></a>chat.export(<span class="st">"convo.md"</span>, title<span class="op">=</span><span class="st">"Python Q&amp;A"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb23"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb23-1"><a href="#cb23-1" aria-hidden="true" tabindex="-1"></a>chat.export(<span class="st">"convo.md"</span>, title<span class="op">=</span><span class="st">"Python Q&amp;A"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </section>
 </section>

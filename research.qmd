@@ -4,7 +4,7 @@ title: "Research"
 
 # Work in Progress
 
-**Does Sentiment Predict Consumption Growth of Indian Households?** [[Slides](./presentation.pdf)]  [[Paper](./paper_25march.pdf)]
+**Does Sentiment Predict Consumption Growth of Indian Households?** [[Slides](./presentation.pdf)]  [[Latest Version](./paperjune19.pdf)]
 
 This is a joint work with Dr. Siddhartha Chattopadhyay of IIT Kharagpur and Dr. Sohini Sahu of IIT Kanpur. Earlier version of this paper was presented at the *19th Annual Conference at ISI Delhi* and *Workshop on Open Economy Macroeconomics and Economic Integration in Emerging Market Economies at Centre for Development Studies, Thiruvananthapuram.*
 

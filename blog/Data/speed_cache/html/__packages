@@ -1,0 +1,11 @@
+pacman
+readr
+dplyr
+polars
+tidypolars
+tictoc
+reticulate
+data.table
+quarto
+bench
+sessioninfo
