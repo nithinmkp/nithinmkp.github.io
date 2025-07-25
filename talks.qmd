@@ -16,9 +16,10 @@ title: "Talks/Invited Lectures"
 # Talks
 
 - **What Grad School Don’t Teach You: Tools for Transparent and Reproducible Research**  
-  *Preconference Workshop, KEA Economic Conference 2025*  
+  *Workshop Session, YSI-Economiga Monsoon School 2025*  
   Delivered a session on the importance of reproducibility in research, covering tools like Git, Quarto, R, and Python.  
-  🔗 [Materials available here](https://nithinmkp.github.io/kea-talk/)
+  🔗 [Materials available here](https://nithinmkp.github.io/ysi-economiga/)
+  (_a previous version of this talk was presented at pre-conference session, KEA Conference 2025_)
 
 - **Purrr, A Multipurpose Package**  
   *Boston R Users Group (Remote, 2021)*  
