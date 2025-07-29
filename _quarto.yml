@@ -8,6 +8,8 @@ website:
     right:
       - text: CV
         href: my-new-cv.pdf
+      - text : Employment
+        href: employment.qmd
     left:
       - text: "{{< fa atom  >}} Research"
         href: research.qmd

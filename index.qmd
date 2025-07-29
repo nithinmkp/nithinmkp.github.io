@@ -32,7 +32,7 @@ library(dotenv)
 Hello, I'm Nithin.
 Welcome to my website! I’m an economist specializing in macroeconomics, with a passion for data analysis and programming. 
 
-Currently, I am  a Research Assistant at State Planning Board, Government of Kerala
+Currently, I am an Assistant Professor in Economics, Kerala Agricultural University
 
 Beyond research and coding, I’m also an endurance athlete, always pushing boundaries—whether in economic modeling or on the track.
 

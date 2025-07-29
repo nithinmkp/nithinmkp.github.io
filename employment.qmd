@@ -1,0 +1,46 @@
+---
+title: "Employment"
+---
+## Current Position
+
+**Assistant Professor in Economics**  
+*Kerala Agricultural University, Thrissur*  
+*June 2025 – Present*
+
+- Teaching undergraduate and postgraduate economics courses.
+- Research in macroeconomics, consumer sentiment, and econometric modeling.
+
+---
+
+## Past Experience
+
+### Research Assistant  
+**Kerala State Planning Board, Government of Kerala**  
+*Jan 2024 – June 2025*
+
+- Associated with the *Social Services Divison* of the Board. 
+- Prepared Annual Plans, Budget Statements, and Economic Review.
+- Conducted research on social sectors such as education and sports.
+- Worked with large-scale socio-economic data (DHS, NSSO) using R/Python.
+
+**Kerala State Planning Board, Government of Kerala**  
+*Nov 2021 – Feb 2022*
+
+- Prepared Annual Plans, Budget Statements, and Economic Review.
+- Associated with the *Industrial and Infrastructure* division of the board
+- **Availed Study leave till Jan 2024**
+---
+
+### Visiting Faculty  
+**Sarla Anil Modi School of Economics, NMIMS, Mumbai**  
+*Oct 2020 – Jan 2021*
+
+- Taught Advanced Microeconomics to Master's students.
+
+---
+
+### Guest Faculty  
+**Government College Kodancherry, University of Calicut**  
+*Oct 2018 – Jan 2019*
+
+- Taught Advanced Microeconomics to both Master's and Bachelor's students.
