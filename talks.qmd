@@ -3,6 +3,12 @@ title: "Talks/Invited Lectures"
 ---
 
 # Invited Lectures
+- Served as a resource person for **Econtrix-26*, the workshop jointly organized by **Flame University** and **Economiga** during 3-5 January, 2026. 
+  - handled sessions on **Web scrapping using R and Python** and **Time Series Analysis using R**.
+  🔗 [Wesbite here](https://nithinmkp.github.io/flame-economiga/)
+
+- Invited Resource person at 5-day National Workshop on "Data Analysis using R" organized by jointly by the *Kerala Economic Association* and **Inter University Centre for Alternative Economics**, *University of Kerala*, Thiruvananthapuram during 25-29 August, 2025. 
+🔗 [Slides available here](https://christ-r-talk.netlify.app)
 
 - **Data Analysis using R (Hands-on Experience)**  
   *Presidency University, Bangalore (Online, 2024)*  

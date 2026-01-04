@@ -6,3 +6,4 @@
 /.venv
 
 /blog/Data/nba_aa_elo.csv
+**/*.quarto_ipynb

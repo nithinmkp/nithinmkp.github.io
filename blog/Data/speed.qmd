@@ -169,7 +169,7 @@ So, if performance is your priority:
 
  With tools like reticulate and quarto, we can blend strengths across ecosystems—without giving up speed. These tools help us to get the best of both worlds.
 
-This document was built with R version `r getRversion()` and Python version `r py_config()$version`.
+This document was built with R version `r getRversion()` and Python version `r reticulate::py_config()$version`.
 
 :::{.callout-tip collapse="true"}
 # Session Info
