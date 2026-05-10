@@ -11,10 +11,20 @@ My academic and policy work combines university teaching with applied research a
 ### Assistant Professor and Head, Department of Development Economics
 
 **Kerala Agricultural University, Thrissur**  
-*June 2025 - Present*
+*May 2026 - Present*
 
 - Teaching undergraduate and postgraduate economics courses.
 - Research in macroeconomics, consumer sentiment, and econometric modeling.
+:::
+
+:::{.timeline-card}
+### Assistant Professor, Department of Development Economics
+
+**Kerala Agricultural University, Thrissur**  
+*June 2025 - April 30, 2026*
+
+- Taught undergraduate and postgraduate economics courses.
+- Continued research in macroeconomics, consumer sentiment, and econometric modeling.
 :::
 
 ## Past Experience
