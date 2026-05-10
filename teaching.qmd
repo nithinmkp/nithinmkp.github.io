@@ -4,7 +4,7 @@ title: "Teaching"
 
 My teaching spans undergraduate and postgraduate economics, with a focus on analytical clarity, applied policy, and empirical methods.
 
-## Current Teaching
+## Current Courses
 
 :::{.teaching-list}
 :::{.teaching-course}
@@ -18,38 +18,22 @@ Currently offered
 :::
 :::
 
-## Courses Offered in 2025
+## 2025
 
 :::{.teaching-list}
 :::{.teaching-course}
 ### Econ 3209 Basic Econometrics
-
-:::{.teaching-meta}
-Offered in 2025
-:::
 :::
 
 :::{.teaching-course}
 ### Econ 501 Microeconomics
-
-:::{.teaching-meta}
-Offered in 2025
-:::
 :::
 
 :::{.teaching-course}
 ### Econ 3107 Agribusiness Project Management
-
-:::{.teaching-meta}
-Offered in 2025
-:::
 :::
 
 :::{.teaching-course}
 ### Econ 1101 Microeconomics
-
-:::{.teaching-meta}
-Offered in 2025
-:::
 :::
 :::
