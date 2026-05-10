@@ -143,6 +143,70 @@ h1, h2, h3, h4 {
   margin-bottom: 0.5rem;
 }
 
+.blog-intro {
+  margin: 0.5rem 0 2rem;
+  font-size: 1.08rem;
+  max-width: 48rem;
+}
+
+#listing-listing .listing-actions-group {
+  background: $paper;
+  border: 1px solid rgba(22, 58, 54, 0.10);
+  border-radius: 1rem;
+  box-shadow: 0 12px 24px rgba(22, 58, 54, 0.05);
+  margin-bottom: 1.4rem;
+  padding: 0.85rem;
+}
+
+#listing-listing .form-select,
+#listing-listing .form-control {
+  background: #fffcf6;
+  border-color: rgba(22, 58, 54, 0.14);
+}
+
+#listing-listing .quarto-post {
+  background: $paper;
+  border: 1px solid rgba(22, 58, 54, 0.10);
+  border-top: 4px solid $gold;
+  border-radius: 1rem;
+  box-shadow: 0 14px 28px rgba(22, 58, 54, 0.06);
+  margin-bottom: 1.2rem;
+  padding: 1rem;
+}
+
+#listing-listing .quarto-post .thumbnail img {
+  border-radius: 0.8rem;
+}
+
+#listing-listing .listing-title a {
+  color: $deep-green;
+  text-decoration: none;
+}
+
+#listing-listing .listing-title a:hover {
+  color: $forest;
+}
+
+#listing-listing .listing-category,
+.quarto-listing-category .category {
+  background: rgba(178, 138, 58, 0.10);
+  border-radius: 999px;
+  color: $deep-green;
+}
+
+.quarto-listing-category {
+  background: $paper;
+  border: 1px solid rgba(22, 58, 54, 0.10);
+  border-radius: 1rem;
+  box-shadow: 0 12px 24px rgba(22, 58, 54, 0.05);
+  padding: 1rem;
+}
+
+.quarto-listing-category-title {
+  color: $deep-green;
+  font-family: $headings-font-family;
+}
+
 .page-footer {
   border-top: 1px solid rgba(22, 58, 54, 0.12);
 }
