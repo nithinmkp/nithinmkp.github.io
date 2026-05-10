@@ -39,42 +39,42 @@
     "href": "talks.html",
     "title": "Talks/Invited Lectures",
     "section": "",
-    "text": "Invited Lectures\n\nServed as a resource person for **Econtrix-26*, the workshop jointly organized by Flame University and Economiga during 3-5 January, 2026.\n\nhandled sessions on Web scrapping using R and Python and Time Series Analysis using R. 🔗 Wesbite here\n\nInvited Resource person at 5-day National Workshop on “Data Analysis using R” organized by jointly by the Kerala Economic Association and Inter University Centre for Alternative Economics, University of Kerala, Thiruvananthapuram during 25-29 August, 2025. 🔗 Slides available here\nData Analysis using R (Hands-on Experience)\nPresidency University, Bangalore (Online, 2024)\nDelivered a session on using R for data analysis as part of the Faculty Development Program on Advanced Research Methodology & Data Analysis.\n🔗 Slides available here\nUsing R for Data Analysis\nCentral University of South Bihar (Gaya, Bihar, 2022)\nInvited lecture to introduce R for social science researchers.\n\n\n\nTalks\n\nWhat Grad School Don’t Teach You: Tools for Transparent and Reproducible Research\nWorkshop Session, YSI-Economiga Monsoon School 2025\nDelivered a session on the importance of reproducibility in research, covering tools like Git, Quarto, R, and Python.\n🔗 Materials available here (a previous version of this talk was presented at pre-conference session, KEA Conference 2025)\nPurrr, A Multipurpose Package\nBoston R Users Group (Remote, 2021)\nDelivered a lightning talk on the use of one of my favorite packages, ‘Purrr.’\nA Sneak Peek into R for Economics\nEconomiga (Remote, 2021)\nDelivered a live talk on using R in Economics Research.\n🔗 Watch the talk here\n🔗 Event details"
+    "text": "Selected invited lectures and talks on data analysis, reproducible research, and economics-oriented computing."
   },
   {
     "objectID": "research.html",
     "href": "research.html",
     "title": "Research",
     "section": "",
-    "text": "Work in Progress\nDoes Sentiment Predict Consumption Growth of Indian Households? [Slides] [Latest Version]\nThis is a joint work with Dr. Siddhartha Chattopadhyay of IIT Kharagpur and Dr. Sohini Sahu of IIT Kanpur. Earlier version of this paper was presented at the 19th Annual Conference at ISI Delhi and Workshop on Open Economy Macroeconomics and Economic Integration in Emerging Market Economies at Centre for Development Studies, Thiruvananthapuram.\n\n\nPublications\n\nMani, N., Mishra, A. K., & Pandikasala, J. (2023). How serious is India’s nonperforming assets crisis? A structural satellite version of the financial-macroeconometric model. Asia-Pacific Financial Markets, 30(4), 761–794. https://doi.org/10.1007/s10690-023-09397-9\n\nJijin, P., Mishra, A. K., & Nithin, M. (2022). Macroeconomic determinants of remittances to India. Economic Change and Restructuring, 55(2), 1229–1248.\n\nPandikasala, J., Vyas, I., & Mani, N. (2022). Do financial development drive remittances?\n\nNithin, M., Jijin, P., & Baiju, P. (2018). Has demonetisation pushed digitalisation in India? Some counter evidences. Journal of Business Thought, 9, 58–69. https://doi.org/10.18311/jbt/2018/21170\n\n\n\nResearch Interests\nConsumption Dynamics, Consumption Heterogeneity, Fiscal and Monetary Issues"
+    "text": "My research interests lie in macroeconomics, household behaviour, and applied empirical analysis."
   },
   {
     "objectID": "contact.html",
     "href": "contact.html",
     "title": "Contact",
     "section": "",
-    "text": "Nithin M\nRoom No: 104\nAssistant Professor and Head\nDepartment of Development Economics\nCollege of Cooperation Banking and Management\nKerala Agricultural University\nVellanikkara, Thrissur\nKerala - 680656\nPhone: +91 9447748013\nE-mail: write2nithinm@gmail.com"
+    "text": "Please feel free to get in touch regarding research, teaching, invited lectures, or collaboration."
   },
   {
     "objectID": "employment.html",
     "href": "employment.html",
     "title": "Employment",
     "section": "",
-    "text": "Assistant Professor and Head, Department of Development Economics\nKerala Agricultural University, Thrissur\nJune 2025 – Present\n\nTeaching undergraduate and postgraduate economics courses.\nResearch in macroeconomics, consumer sentiment, and econometric modeling."
+    "text": "My academic and policy work combines university teaching with applied research and public-sector experience."
   },
   {
     "objectID": "employment.html#current-position",
     "href": "employment.html#current-position",
     "title": "Employment",
-    "section": "",
-    "text": "Assistant Professor and Head, Department of Development Economics\nKerala Agricultural University, Thrissur\nJune 2025 – Present\n\nTeaching undergraduate and postgraduate economics courses.\nResearch in macroeconomics, consumer sentiment, and econometric modeling."
+    "section": "Current Position",
+    "text": "Current Position\n\nAssistant Professor and Head, Department of Development Economics\nKerala Agricultural University, Thrissur\nJune 2025 - Present\n\nTeaching undergraduate and postgraduate economics courses.\nResearch in macroeconomics, consumer sentiment, and econometric modeling."
   },
   {
     "objectID": "employment.html#past-experience",
     "href": "employment.html#past-experience",
     "title": "Employment",
     "section": "Past Experience",
-    "text": "Past Experience\n\nResearch Assistant\nKerala State Planning Board, Government of Kerala\nJan 2024 – June 2025\n\nAssociated with the Social Services Divison of the Board.\nPrepared Annual Plans, Budget Statements, and Economic Review.\nConducted research on social sectors such as education and sports.\nWorked with large-scale socio-economic data (DHS, NSSO) using R/Python.\n\nKerala State Planning Board, Government of Kerala\nNov 2021 – Feb 2022\n\nPrepared Annual Plans, Budget Statements, and Economic Review.\nAssociated with the Industrial and Infrastructure division of the board\nAvailed Study leave till Jan 2024\n\n\n\nVisiting Faculty\nSarla Anil Modi School of Economics, NMIMS, Mumbai\nOct 2020 – Jan 2021\n\nTaught Advanced Microeconomics to Master’s students.\n\n\n\n\nGuest Faculty\nGovernment College Kodancherry, University of Calicut\nOct 2018 – Jan 2019\n\nTaught Advanced Microeconomics to both Master’s and Bachelor’s students."
+    "text": "Past Experience\n\nResearch Assistant\nKerala State Planning Board, Government of Kerala\nJan 2024 - June 2025\n\nAssociated with the Social Services Divison of the Board.\nPrepared Annual Plans, Budget Statements, and Economic Review.\nConducted research on social sectors such as education and sports.\nWorked with large-scale socio-economic data (DHS, NSSO) using R/Python.\n\n\n\nResearch Assistant\nKerala State Planning Board, Government of Kerala\nNov 2021 - Feb 2022\n\nPrepared Annual Plans, Budget Statements, and Economic Review.\nAssociated with the Industrial and Infrastructure division of the board.\nAvailed study leave until Jan 2024.\n\n\n\nVisiting Faculty\nSarla Anil Modi School of Economics, NMIMS, Mumbai\nOct 2020 - Jan 2021\n\nTaught Advanced Microeconomics to Master’s students.\n\n\n\nGuest Faculty\nGovernment College Kodancherry, University of Calicut\nOct 2018 - Jan 2019\n\nTaught Advanced Microeconomics to both Master’s and Bachelor’s students."
   },
   {
     "objectID": "teaching.html",
@@ -117,5 +117,47 @@
     "title": "Blog",
     "section": "",
     "text": "This page collects short pieces on R, Python, econometrics, data analysis, and related tools for empirical work.\n\n\n\n\n\n\n\n   \n    \n    \n      Order By\n      Default\n      \n        Title\n      \n      \n        Date - Oldest\n      \n      \n        Date - Newest\n      \n    \n  \n    \n      \n      \n    \n\n\n\n\n\n\n\n\n\n\nGenerate images with OpenAI\n\n\n\nR\n\nOpenAI\n\nTutorial\n\n\n\n\n\n\n\n\n\nFeb 28, 2025\n\n\n\n\n\n\n\n\n\n\n\n\nLLMs in R and Python\n\n\n\nR\n\nPython\n\nAI\n\nTutorial\n\n\n\n\n\n\n\n\n\nMay 31, 2025\n\n\nNithin M\n\n\n\n\n\n\n\n\n\n\n\n\nStreamlining R Workflows: A Practitioner’s Guide to Data Management\n\n\n\nR\n\nData Management\n\nTutorial\n\n\n\n\n\n\n\n\n\nMar 28, 2025\n\n\n\n\n\n\n\n\n\n\n\n\nTesting Python vs R\n\n\n\nR\n\nPython\n\nTutorial\n\n\n\n\n\n\n\n\n\nJun 7, 2025\n\n\n\n\n\nNo matching items"
+  },
+  {
+    "objectID": "contact.html#nithin-m",
+    "href": "contact.html#nithin-m",
+    "title": "Contact",
+    "section": "Nithin M",
+    "text": "Nithin M\nRoom No. 104\nAssistant Professor and Head\nDepartment of Development Economics\nCollege of Cooperation, Banking and Management\nKerala Agricultural University\nVellanikkara, Thrissur\nKerala 680656\nPhone: +91 9447748013\nE-mail: write2nithinm@gmail.com"
+  },
+  {
+    "objectID": "research.html#work-in-progress",
+    "href": "research.html#work-in-progress",
+    "title": "Research",
+    "section": "Work in Progress",
+    "text": "Work in Progress\n\nDoes Sentiment Predict Consumption Growth of Indian Households?\nSlides | Latest Version\nThis joint work with Dr. Siddhartha Chattopadhyay of IIT Kharagpur and Dr. Sohini Sahu of IIT Kanpur examines the role of sentiment in predicting household consumption growth in India.\nEarlier versions of the paper were presented at the 19th Annual Conference at ISI Delhi and at the Workshop on Open Economy Macroeconomics and Economic Integration in Emerging Market Economies at the Centre for Development Studies, Thiruvananthapuram."
+  },
+  {
+    "objectID": "research.html#publications",
+    "href": "research.html#publications",
+    "title": "Research",
+    "section": "Publications",
+    "text": "Publications\n\nMani, N., Mishra, A. K., & Pandikasala, J. (2023). How serious is India’s nonperforming assets crisis? A structural satellite version of the financial-macroeconometric model. Asia-Pacific Financial Markets, 30(4), 761–794. https://doi.org/10.1007/s10690-023-09397-9\n\nJijin, P., Mishra, A. K., & Nithin, M. (2022). Macroeconomic determinants of remittances to India. Economic Change and Restructuring, 55(2), 1229–1248.\n\nPandikasala, J., Vyas, I., & Mani, N. (2022). Do financial development drive remittances?\n\nNithin, M., Jijin, P., & Baiju, P. (2018). Has demonetisation pushed digitalisation in India? Some counter evidences. Journal of Business Thought, 9, 58–69. https://doi.org/10.18311/jbt/2018/21170"
+  },
+  {
+    "objectID": "research.html#research-interests",
+    "href": "research.html#research-interests",
+    "title": "Research",
+    "section": "Research Interests",
+    "text": "Research Interests\n\nConsumption Dynamics Consumption Heterogeneity Fiscal Policy Monetary Issues"
+  },
+  {
+    "objectID": "talks.html#invited-lectures",
+    "href": "talks.html#invited-lectures",
+    "title": "Talks/Invited Lectures",
+    "section": "Invited Lectures",
+    "text": "Invited Lectures\n\n\nEcontrix-26\nFlame University and Economiga\n3-5 January 2026\nServed as a resource person for the workshop and handled sessions on web scraping using R and Python and time series analysis using R.\nWebsite\n\n\nData Analysis using R\nKerala Economic Association and Inter University Centre for Alternative Economics, University of Kerala\n25-29 August 2025\nInvited resource person at a five-day national workshop on data analysis using R.\nSlides\n\n\nData Analysis using R (Hands-on Experience)\nPresidency University, Bangalore\nOnline, 2024\nDelivered a session on using R for data analysis as part of the Faculty Development Program on Advanced Research Methodology and Data Analysis.\nSlides\n\n\nUsing R for Data Analysis\nCentral University of South Bihar\nGaya, Bihar, 2022\nInvited lecture introducing R for social science researchers."
+  },
+  {
+    "objectID": "talks.html#talks",
+    "href": "talks.html#talks",
+    "title": "Talks/Invited Lectures",
+    "section": "Talks",
+    "text": "Talks\n\n\nWhat Grad School Don’t Teach You: Tools for Transparent and Reproducible Research\nYSI-Economiga Monsoon School 2025\nWorkshop session\nDelivered a session on reproducible research workflows using Git, Quarto, R, and Python. A previous version of this talk was presented at a pre-conference session of the KEA Conference 2025.\nMaterials\n\n\nPurrr, A Multipurpose Package\nBoston R Users Group\nRemote, 2021\nLightning talk on one of my preferred R packages, purrr.\n\n\nA Sneak Peek into R for Economics\nEconomiga\nRemote, 2021\nLive talk on using R in economics research.\nWatch the talk | Event details"
   }
 ]

@@ -3,27 +3,21 @@ title: "Contact"
 title-block-banner: false
 ---
 
-<center>
+:::{.page-intro}
+Please feel free to get in touch regarding research, teaching, invited lectures, or collaboration.
+:::
 
-**Nithin M**
+:::{.contact-card}
+## Nithin M
 
-Room No: 104 
+Room No. 104  
+Assistant Professor and Head  
+Department of Development Economics  
+College of Cooperation, Banking and Management  
+Kerala Agricultural University  
+Vellanikkara, Thrissur  
+Kerala 680656
 
-Assistant Professor and Head
-
-Department of Development Economics
-
-College of Cooperation Banking and Management
-
-Kerala Agricultural University
-
-Vellanikkara, Thrissur
-
-Kerala - 680656
-
-Phone: +91 9447748013
-
-E-mail: <write2nithinm@gmail.com>
-
-
-</center>
+**Phone:** +91 9447748013  
+**E-mail:** <write2nithinm@gmail.com>
+:::

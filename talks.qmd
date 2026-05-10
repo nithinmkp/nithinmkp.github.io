@@ -2,37 +2,87 @@
 title: "Talks/Invited Lectures"
 ---
 
-# Invited Lectures
-- Served as a resource person for **Econtrix-26*, the workshop jointly organized by **Flame University** and **Economiga** during 3-5 January, 2026. 
-  - handled sessions on **Web scrapping using R and Python** and **Time Series Analysis using R**.
-  🔗 [Wesbite here](https://nithinmkp.github.io/flame-economiga/)
+:::{.page-intro}
+Selected invited lectures and talks on data analysis, reproducible research, and economics-oriented computing.
+:::
 
-- Invited Resource person at 5-day National Workshop on "Data Analysis using R" organized by jointly by the *Kerala Economic Association* and **Inter University Centre for Alternative Economics**, *University of Kerala*, Thiruvananthapuram during 25-29 August, 2025. 
-🔗 [Slides available here](https://christ-r-talk.netlify.app)
+## Invited Lectures
 
-- **Data Analysis using R (Hands-on Experience)**  
-  *Presidency University, Bangalore (Online, 2024)*  
-  Delivered a session on using **R for data analysis** as part of the **Faculty Development Program on Advanced Research Methodology & Data Analysis**.  
-  🔗 [Slides available here](https://christ-r-talk.netlify.app)
+:::{.talk-list}
+:::{.talk-card}
+### Econtrix-26
 
-- **Using R for Data Analysis**  
-  *Central University of South Bihar (Gaya, Bihar, 2022)*  
-  Invited lecture to introduce R for social science researchers.
+**Flame University and Economiga**  
+*3-5 January 2026*
 
-# Talks
+Served as a resource person for the workshop and handled sessions on **web scraping using R and Python** and **time series analysis using R**.
 
-- **What Grad School Don’t Teach You: Tools for Transparent and Reproducible Research**  
-  *Workshop Session, YSI-Economiga Monsoon School 2025*  
-  Delivered a session on the importance of reproducibility in research, covering tools like Git, Quarto, R, and Python.  
-  🔗 [Materials available here](https://nithinmkp.github.io/ysi-economiga/)
-  (_a previous version of this talk was presented at pre-conference session, KEA Conference 2025_)
+[Website](https://nithinmkp.github.io/flame-economiga/)
+:::
 
-- **Purrr, A Multipurpose Package**  
-  *Boston R Users Group (Remote, 2021)*  
-  Delivered a lightning talk on the use of one of my favorite packages, 'Purrr.'
+:::{.talk-card}
+### Data Analysis using R
 
-- **A Sneak Peek into R for Economics**  
-  *Economiga (Remote, 2021)*  
-  Delivered a live talk on using R in Economics Research.  
-  🔗 [Watch the talk here](https://www.youtube.com/watch?v=vdD1w5_UGZs)  
-  🔗 [Event details](https://www.economiga.org/econtalks/a-sneak-peek-into-r-for-economics)
+**Kerala Economic Association and Inter University Centre for Alternative Economics, University of Kerala**  
+*25-29 August 2025*
+
+Invited resource person at a five-day national workshop on data analysis using R.
+
+[Slides](https://christ-r-talk.netlify.app)
+:::
+
+:::{.talk-card}
+### Data Analysis using R (Hands-on Experience)
+
+**Presidency University, Bangalore**  
+*Online, 2024*
+
+Delivered a session on using R for data analysis as part of the Faculty Development Program on Advanced Research Methodology and Data Analysis.
+
+[Slides](https://christ-r-talk.netlify.app)
+:::
+
+:::{.talk-card}
+### Using R for Data Analysis
+
+**Central University of South Bihar**  
+*Gaya, Bihar, 2022*
+
+Invited lecture introducing R for social science researchers.
+:::
+:::
+
+## Talks
+
+:::{.talk-list}
+:::{.talk-card}
+### What Grad School Don't Teach You: Tools for Transparent and Reproducible Research
+
+**YSI-Economiga Monsoon School 2025**  
+*Workshop session*
+
+Delivered a session on reproducible research workflows using Git, Quarto, R, and Python. A previous version of this talk was presented at a pre-conference session of the KEA Conference 2025.
+
+[Materials](https://nithinmkp.github.io/ysi-economiga/)
+:::
+
+:::{.talk-card}
+### Purrr, A Multipurpose Package
+
+**Boston R Users Group**  
+*Remote, 2021*
+
+Lightning talk on one of my preferred R packages, `purrr`.
+:::
+
+:::{.talk-card}
+### A Sneak Peek into R for Economics
+
+**Economiga**  
+*Remote, 2021*
+
+Live talk on using R in economics research.
+
+[Watch the talk](https://www.youtube.com/watch?v=vdD1w5_UGZs) | [Event details](https://www.economiga.org/econtalks/a-sneak-peek-into-r-for-economics)
+:::
+:::
