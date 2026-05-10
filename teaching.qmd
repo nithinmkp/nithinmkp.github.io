@@ -1,0 +1,63 @@
+---
+title: "Teaching"
+---
+
+My teaching spans undergraduate and postgraduate economics, with a focus on analytical clarity, applied policy, and empirical methods.
+
+## Current Teaching
+
+:::{.teaching-list}
+:::{.teaching-course}
+### Econ 2203 International Trade and Policy in Agriculture
+
+:::{.teaching-meta}
+Currently offered
+:::
+
+[Course materials](https://nithinmkp.github.io/eco2203-trade/)
+:::
+:::
+
+## Courses Offered in 2025
+
+:::{.teaching-list}
+:::{.teaching-course}
+### Econ 3209 Basic Econometrics
+
+:::{.teaching-meta}
+Offered in 2025
+:::
+
+Materials are not currently posted online.
+:::
+
+:::{.teaching-course}
+### Econ 501 Microeconomics
+
+:::{.teaching-meta}
+Offered in 2025
+:::
+
+Materials are not currently posted online.
+:::
+
+:::{.teaching-course}
+### Econ 3107 Agribusiness Project Management
+
+:::{.teaching-meta}
+Offered in 2025
+:::
+
+Materials are not currently posted online.
+:::
+
+:::{.teaching-course}
+### Econ 1101 Microeconomics
+
+:::{.teaching-meta}
+Offered in 2025
+:::
+
+Materials are not currently posted online.
+:::
+:::

@@ -5,12 +5,17 @@ website:
   title: "Nithin M"
   open-graph: true # https://quarto.org/docs/websites/website-tools.html#open-graph
   navbar:
+    background: "#f7f3eb"
     right:
       - text: CV
         href: CV-Nithin.pdf
       - text : Employment
         href: employment.qmd
     left:
+      - text: Home
+        href: index.qmd
+      - text: Teaching
+        href: teaching.qmd
       - text: "{{< fa atom  >}} Research"
         href: research.qmd
       - text: "{{< fa comments  >}} Talks"
@@ -20,11 +25,13 @@ website:
       - text: Contact
         href: contact.qmd
   page-footer: 
-    background: "#eeffee"
+    background: "#f7f3eb"
+    left: "Nithin M"
+    right: "Department of Development Economics"
 format:
   html:
-    backgroundcolor: "#eeffee"
-    fontsize: 20px
+    backgroundcolor: "#f8f5ef"
+    fontsize: 18px
     theme: [cosmo, styles.scss]
 execute:
   cache: true

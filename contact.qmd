@@ -9,6 +9,8 @@ title-block-banner: false
 
 Room No: 104 
 
+Assistant Professor and Head
+
 Department of Development Economics
 
 College of Cooperation Banking and Management
