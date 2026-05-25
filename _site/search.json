@@ -116,7 +116,7 @@
     "href": "blog/index.html",
     "title": "Blog",
     "section": "",
-    "text": "This page collects short pieces on R, Python, econometrics, data analysis, and related tools for empirical work.\n\n\n\n\n\n\n\n   \n    \n    \n      Order By\n      Default\n      \n        Title\n      \n      \n        Date - Oldest\n      \n      \n        Date - Newest\n      \n    \n  \n    \n      \n      \n    \n\n\n\n\n\n\n\n\n\n\nGenerate images with OpenAI\n\n\n\nR\n\nOpenAI\n\nTutorial\n\n\n\n\n\n\n\n\n\nFeb 28, 2025\n\n\n\n\n\n\n\n\n\n\n\n\nLLMs in R and Python\n\n\n\nR\n\nPython\n\nAI\n\nTutorial\n\n\n\n\n\n\n\n\n\nMay 31, 2025\n\n\nNithin M\n\n\n\n\n\n\n\n\n\n\n\n\nStreamlining R Workflows: A Practitioner’s Guide to Data Management\n\n\n\nR\n\nData Management\n\nTutorial\n\n\n\n\n\n\n\n\n\nMar 28, 2025\n\n\n\n\n\n\n\n\n\n\n\n\nTesting Python vs R\n\n\n\nR\n\nPython\n\nTutorial\n\n\n\n\n\n\n\n\n\nJun 7, 2025\n\n\n\n\n\nNo matching items"
+    "text": "This page collects short pieces on R, Python, econometrics, data analysis, and related tools for empirical work.\n\n\n\n\n\n\n\n   \n    \n    \n      Order By\n      Default\n      \n        Title\n      \n      \n        Date - Oldest\n      \n      \n        Date - Newest\n      \n    \n  \n    \n      \n      \n    \n\n\n\n\n\n\n\n\n\n\nGenerate images with OpenAI\n\n\n\nR\n\nOpenAI\n\nTutorial\n\n\n\n\n\n\n\n\n\nFeb 28, 2025\n\n\n\n\n\n\n\n\n\n\n\n\nLLMs in R and Python\n\n\n\nR\n\nPython\n\nAI\n\nTutorial\n\n\n\n\n\n\n\n\n\nMay 31, 2025\n\n\nNithin M\n\n\n\n\n\n\n\n\n\n\n\n\nPersonalised Exams at Scale: From Quarto to tynding\n\n\n\nR\n\nQuarto\n\nTypst\n\nTutorial\n\n\n\n\n\n\n\n\n\nMay 25, 2026\n\n\nNithin M\n\n\n\n\n\n\n\n\n\n\n\n\nStreamlining R Workflows: A Practitioner’s Guide to Data Management\n\n\n\nR\n\nData Management\n\nTutorial\n\n\n\n\n\n\n\n\n\nMar 28, 2025\n\n\n\n\n\n\n\n\n\n\n\n\nTesting Python vs R\n\n\n\nR\n\nPython\n\nTutorial\n\n\n\n\n\n\n\n\n\nJun 7, 2025\n\n\n\n\n\nNo matching items"
   },
   {
     "objectID": "contact.html#nithin-m",
@@ -159,5 +159,40 @@
     "title": "Talks/Invited Lectures",
     "section": "Talks",
     "text": "Talks\n\n\nWhat Grad School Don’t Teach You: Tools for Transparent and Reproducible Research\nYSI-Economiga Monsoon School 2025\nWorkshop session\nDelivered a session on reproducible research workflows using Git, Quarto, R, and Python. A previous version of this talk was presented at a pre-conference session of the KEA Conference 2025.\nMaterials\n\n\nPurrr, A Multipurpose Package\nBoston R Users Group\nRemote, 2021\nLightning talk on one of my preferred R packages, purrr.\n\n\nA Sneak Peek into R for Economics\nEconomiga\nRemote, 2021\nLive talk on using R in economics research.\nWatch the talk | Event details"
+  },
+  {
+    "objectID": "blog/Production/quarto-vs-tynding.html",
+    "href": "blog/Production/quarto-vs-tynding.html",
+    "title": "Personalised Exams at Scale: From Quarto to tynding",
+    "section": "",
+    "text": "I have been using Quarto for a while now. Reports, notes, blog posts, data analysis documents. It is one of my favourite tools for anything that mixes code and output.\nWhen I started teaching econometrics, I had one question. Can I bring this same Quarto workflow into the classroom?\nNot just lecture notes. Something more useful. Parametrised documents. Student-specific outputs. The kind of thing Quarto is built for, but most people only use for standard reports.\nThat is how I ended up building personalised exam papers. The idea is simple. One template, one script, and each student gets their own version of the exam with different data and a different question order. Same structure, same rubric. Different numbers.\nAt the time, my solution was Quarto + Typst. That worked well. I was happy with it.\nThen tynding came along. The production side became much faster.\n\n\n\n\n\n\nImportantThe short version\n\n\n\nFor a 43-student batch, Quarto took about 3.5 minutes.\ntynding took about 2.0 seconds.\nThat is roughly a 107x speed-up. Same output. Same reproducibility."
+  },
+  {
+    "objectID": "blog/Production/quarto-vs-tynding.html#why-not-just-use-typst-directly",
+    "href": "blog/Production/quarto-vs-tynding.html#why-not-just-use-typst-directly",
+    "title": "Personalised Exams at Scale: From Quarto to tynding",
+    "section": "Why not just use Typst directly?",
+    "text": "Why not just use Typst directly?\nA fair question. If I am already compiling through Typst, why go through Quarto at all?\nThe answer is the student list.\nMy roster is an Excel file. Names, roll numbers, email addresses. Before any paper can be rendered, I need to read that file, clean the column names, extract roll numbers, derive seeds, generate datasets, and write CSVs. That is all R work. There is no clean way to do that in native Typst.\nSo R is in the picture regardless. The only question is how R hands off to Typst. Through a full Quarto render pipeline, or directly."
+  },
+  {
+    "objectID": "blog/Production/quarto-vs-tynding.html#key-takeaways",
+    "href": "blog/Production/quarto-vs-tynding.html#key-takeaways",
+    "title": "Personalised Exams at Scale: From Quarto to tynding",
+    "section": "Key Takeaways",
+    "text": "Key Takeaways\n✅ Quarto’s parametrised rendering is a genuinely useful way to bring the reporting workflow into academic settings.\n✅ Typst makes it practical. Fast compilation, clean templates, no LaTeX installation.\n✅ R is mandatory anyway (Excel student list, dataset generation). The question is only how it connects to the typesetting step.\n✅ tynding eliminates the Quarto subprocess overhead. 107x faster for a 43-student batch.\n✅ Same output. Same reproducibility. Just faster."
+  },
+  {
+    "objectID": "blog/Production/quarto-vs-tynding.html#final-thoughts",
+    "href": "blog/Production/quarto-vs-tynding.html#final-thoughts",
+    "title": "Personalised Exams at Scale: From Quarto to tynding",
+    "section": "Final Thoughts",
+    "text": "Final Thoughts\nThe curiosity that started this was simple. I already used Quarto for everything, so why not for exams too?\nThat led to Quarto + Typst, which worked well and still does. Then tynding arrived and made the production side much leaner.\nIf you are already in a Quarto workflow and teach a course with quantitative assessments, this is worth trying out. The parametrised approach is more interesting than it first sounds. tynding makes it practical even at larger class sizes.\nFor now, that is it. Hope this was useful.\nTill next time, bye!! 👋"
+  },
+  {
+    "objectID": "blog/Production/quarto-vs-tynding.html#disclaimer",
+    "href": "blog/Production/quarto-vs-tynding.html#disclaimer",
+    "title": "Personalised Exams at Scale: From Quarto to tynding",
+    "section": "Disclaimer",
+    "text": "Disclaimer\nThis post was drafted with the assistance of AI copy-editing tools. Any remaining errors are entirely my own."
   }
 ]

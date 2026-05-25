@@ -1,0 +1,350 @@
+---
+title: "Personalised Exams at Scale: From Quarto to `tynding`"
+date: "2026-05-25"
+date-format: medium
+categories: [R, Quarto, Typst, Tutorial]
+tags: [Quarto, Typst, tynding, Benchmarking, R Programming]
+author: Nithin M
+toc: true
+image: quarto-tynding.png
+---
+
+# Introduction
+
+I have been using Quarto for a while now. Reports, notes, blog posts, data analysis documents. It is one of my favourite tools for anything that mixes code and output.
+
+When I started teaching econometrics, I had one question. Can I bring this same Quarto workflow into the classroom?
+
+Not just lecture notes. Something more useful. Parametrised documents. Student-specific outputs. The kind of thing Quarto is built for, but most people only use for standard reports.
+
+That is how I ended up building personalised exam papers. The idea is simple. One template, one script, and each student gets their own version of the exam with different data and a different question order. Same structure, same rubric. Different numbers.
+
+At the time, my solution was **Quarto + Typst**. That worked well. I was happy with it.
+
+Then `tynding` came along. The production side became much faster.
+
+::: {.callout-important}
+## The short version
+
+For a 43-student batch, Quarto took about **3.5 minutes**.
+
+`tynding` took about **2.0 seconds**.
+
+That is roughly a **107x speed-up**. Same output. Same reproducibility.
+:::
+
+# Audience
+
+This post is for:
+
+- R and Quarto users curious about how these tools extend into academic settings
+- instructors who want personalised, reproducible exam generation
+- anyone interested in where `tynding` fits relative to a Quarto-based workflow
+
+# The Setup
+
+The exam workflow I built has a simple structure. Every student has a roll number like `2024-45-017`. Strip the digits, use that as the random seed.
+
+```{r}
+#| eval: false
+seed <- as.numeric(gsub("[^0-9]", "", roll_number))
+set.seed(seed)
+```
+
+That one line is the whole trick. The seed is deterministic. The paper is reproducible. No saved state, no lookup table. Same roll number, same paper on any machine.
+
+Once the seed is set, both workflows do the same things:
+
+1. shuffle the Part A question order
+2. generate the student's dataset
+3. render the PDF
+4. write the matching CSV
+
+The two workflows I am comparing differ only in *how* they render.
+
+# First: Quarto + Typst
+
+The original workflow treats the exam as a parametrised Quarto document. One `.qmd` file, one `params$roll_number`, one loop over the student list.
+
+```{r}
+#| eval: false
+purrr::walk(roll_numbers, function(roll) {
+  quarto::quarto_render(
+    input          = "econometrics_exam.qmd",
+    output_file    = glue::glue("exam_papers_quarto/exam_{roll}.pdf"),
+    execute_params = list(roll_number = roll)
+  )
+
+  # quarto_render() runs in its own subprocess, so reset seed here
+  # to generate the student's CSV independently
+  seed <- as.numeric(gsub("[^0-9]", "", roll))
+  set.seed(seed)
+  readr::write_csv(
+    generate_personalized_dataset(roll),
+    glue::glue("exam_papers_quarto/data_{roll}.csv")
+  )
+})
+```
+
+This felt like a very natural use of Quarto. I was already writing everything in `.qmd` files. The parametrised rendering just extended that to student-specific documents. Using Typst as the output format instead of LaTeX kept compilation fast and the template easy to maintain. No TeX installation, no cryptic macro errors.
+
+I still think this is a good workflow. Especially when I am still drafting the exam, tweaking questions, adjusting layout, checking how things look. Quarto keeps the code and the content close together. That makes iteration comfortable.
+
+## Why not just use Typst directly?
+
+A fair question. If I am already compiling through Typst, why go through Quarto at all?
+
+The answer is the student list.
+
+My roster is an Excel file. Names, roll numbers, email addresses. Before any paper can be rendered, I need to read that file, clean the column names, extract roll numbers, derive seeds, generate datasets, and write CSVs. That is all R work. There is no clean way to do that in native Typst.
+
+So R is in the picture regardless. The only question is how R hands off to Typst. Through a full Quarto render pipeline, or directly.
+
+# Then: `tynding`
+
+`tynding` is a newer R package that compiles Typst documents directly from R without any Quarto layer. The main function is `typst_compile()`. Pass it a `.typ` template and a named list of inputs, get a PDF.
+
+The difference from Quarto is what does *not* happen.
+
+With `quarto_render()`, every student triggers a full cycle: launch a subprocess, load R packages into it, execute the template code, compile with Typst, exit. About 4.8 seconds per student. Forty-three times.
+
+With `tynding`, the R session never restarts. Data prep (seed, question shuffling, dataset generation) happens in the main script. Only `typst_compile()` runs per student. The cost is just the Typst compilation itself, about 46 ms.
+
+```{r}
+#| eval: false
+render_exam <- function(roll_number) {
+  seed <- as.numeric(gsub("[^0-9]", "", roll_number))
+
+  set.seed(seed)
+  fill_shuffled <- fill_questions[sample.int(length(fill_questions))]
+  set.seed(seed)
+  tf_shuffled   <- tf_questions[sample.int(length(tf_questions))]
+
+  set.seed(seed)
+  data_filename <- glue::glue("data_{roll_number}.csv")
+  readr::write_csv(
+    generate_personalized_dataset(roll_number),
+    file.path("exam_papers_tynding", data_filename)
+  )
+
+  # compile Typst directly, no subprocess, no Quarto overhead
+  tynding::typst_compile(
+    "typst-template-tynding.typ",
+    output         = file.path("exam_papers_tynding",
+                               glue::glue("exam_{roll_number}.pdf")),
+    roll           = as.character(roll_number),
+    data_filename  = as.character(data_filename),
+    fill_questions = as.list(fill_shuffled),
+    tf_questions   = as.list(tf_shuffled)
+  )
+}
+
+purrr::walk(roll_numbers, render_exam)
+```
+
+The Typst template receives everything through `sys.inputs`. No embedded R code, no Quarto params.
+
+```typst
+#let roll           = sys.inputs.at("roll", default: "UNKNOWN")
+#let data_filename  = sys.inputs.at("data_filename", default: "data.csv")
+#let fill_questions = sys.inputs.at("fill_questions", default: ())
+#let tf_questions   = sys.inputs.at("tf_questions",   default: ())
+```
+
+R does the logic. Typst does the layout. Clean separation.
+
+# Side-by-Side Code
+
+::: {.panel-tabset}
+## Quarto
+
+```{r}
+#| eval: false
+purrr::walk(roll_numbers, function(roll) {
+
+  # new subprocess launched for every student
+  quarto::quarto_render(
+    input          = "econometrics_exam.qmd",
+    output_file    = glue::glue("exam_papers_quarto/exam_{roll}.pdf"),
+    execute_params = list(roll_number = roll)
+  )
+
+  seed <- as.numeric(gsub("[^0-9]", "", roll))
+  set.seed(seed)
+  readr::write_csv(
+    generate_personalized_dataset(roll),
+    glue::glue("exam_papers_quarto/data_{roll}.csv")
+  )
+})
+```
+
+## `tynding`
+
+```{r}
+#| eval: false
+purrr::walk(roll_numbers, function(roll) {
+  seed <- as.numeric(gsub("[^0-9]", "", roll))
+
+  # all data prep in the same R session, no restarts
+  set.seed(seed)
+  fill_shuffled <- fill_questions[sample.int(length(fill_questions))]
+  set.seed(seed)
+  tf_shuffled   <- tf_questions[sample.int(length(tf_questions))]
+
+  set.seed(seed)
+  readr::write_csv(
+    generate_personalized_dataset(roll),
+    glue::glue("exam_papers_tynding/data_{roll}.csv")
+  )
+
+  tynding::typst_compile(
+    "typst-template-tynding.typ",
+    output         = glue::glue("exam_papers_tynding/exam_{roll}.pdf"),
+    roll           = as.character(roll),
+    data_filename  = glue::glue("data_{roll}.csv"),
+    fill_questions = as.list(fill_shuffled),
+    tf_questions   = as.list(tf_shuffled)
+  )
+})
+```
+:::
+
+# Benchmark Results
+
+I ran both workflows at four class sizes (1, 10, 25, 43 students) with three repeated runs each. I also tested a parallel `tynding` path with 15 workers.
+
+```{r}
+#| echo: false
+bench <- data.frame(
+  `Class size` = c("1", "10", "25", "43", "120*", "150*"),
+  `Quarto (sequential)` = c("4.8 s", "48.4 s", "2.0 min", "3.5 min", "9.7 min", "12.1 min"),
+  `tynding (sequential)` = c("0.06 s", "0.55 s", "1.1 s", "2.0 s", "5.5 s", "6.9 s"),
+  `tynding (parallel)` = c("0.19 s", "0.45 s", "0.6 s", "0.8 s", "~2 s", "~3 s"),
+  `Speed-up` = c("80x", "88x", "108x", "107x", "~106x", "~106x"),
+  check.names = FALSE
+)
+
+knitr::kable(bench, align = c("r", "r", "r", "r", "r"))
+```
+
+\* Last two rows extrapolated from per-student rates at n = 43.
+
+The 43-student row is what I care about.
+
+- Quarto: **3.5 minutes**
+- `tynding`: **2.0 seconds**
+
+For a typical undergraduate class of 120 to 150 students, Quarto would take 10 to 12 minutes. `tynding` stays under 7 seconds. That is not just faster. It changes how you think about iterating before exam day.
+
+# Why the Gap Is So Large
+
+Every `quarto_render()` call does this:
+
+1. launch a new R subprocess
+2. load all packages into it
+3. execute template code
+4. compile with Typst
+5. exit
+
+Steps 1 and 2 alone take about 2 to 3 seconds. And they repeat for every student.
+
+`tynding` skips both of those. R is already running. Per-student cost is just the Typst compile, about 46 ms.
+
+4840 / 46 is approximately 105. That is the speed-up.
+
+# Parallel `tynding`
+
+Since every student is independent, `tynding` also maps onto `furrr` without much effort.
+
+```{r}
+#| eval: false
+future::plan(future::multisession, workers = 15)
+
+furrr::future_walk(
+  roll_numbers,
+  render_exam,
+  .options = furrr::furrr_options(seed = TRUE)
+)
+```
+
+Warm runs bring the 43-student batch from 2 seconds to 0.8 seconds. Nice, but sequential `tynding` is already fast enough that parallelism is just extra.
+
+# The Visual Output Is the Same
+
+Both workflows use compatible Typst templates. Same layout, same headings, same formatting. I checked all 43 student papers. The PDFs are visually identical. No trade-off on output quality.
+
+Here are both outputs for the same student (roll `2024-45-001`) so you can see for yourself.
+
+::: {.panel-tabset}
+## Quarto output
+
+```{=html}
+<iframe src="sample-quarto.pdf" width="100%" height="600px" style="border:1px solid #ccc; border-radius:4px;"></iframe>
+```
+
+[Download Quarto PDF](sample-quarto.pdf)
+
+## tynding output
+
+```{=html}
+<iframe src="sample-tynding.pdf" width="100%" height="600px" style="border:1px solid #ccc; border-radius:4px;"></iframe>
+```
+
+[Download tynding PDF](sample-tynding.pdf)
+:::
+
+# When to Use Each
+
+::: {.columns}
+::: {.column width="50%"}
+::: {.callout-note}
+## Use Quarto when...
+
+- still drafting or revising the exam
+- you want code and content in one file
+- one or two papers at a time
+- authoring comfort matters more than speed
+:::
+:::
+
+::: {.column width="50%"}
+::: {.callout-tip}
+## Use `tynding` when...
+
+- template is finalised
+- generating a full cohort
+- reruns expected across semesters
+- batch speed matters
+:::
+:::
+:::
+
+I think of these as doing different parts of the job. Quarto for writing, `tynding` for production. Not a competition between tools.
+
+## Key Takeaways
+
+✅ Quarto's parametrised rendering is a genuinely useful way to bring the reporting workflow into academic settings.
+
+✅ Typst makes it practical. Fast compilation, clean templates, no LaTeX installation.
+
+✅ R is mandatory anyway (Excel student list, dataset generation). The question is only how it connects to the typesetting step.
+
+✅ `tynding` eliminates the Quarto subprocess overhead. 107x faster for a 43-student batch.
+
+✅ Same output. Same reproducibility. Just faster.
+
+## Final Thoughts
+
+The curiosity that started this was simple. I already used Quarto for everything, so why not for exams too?
+
+That led to Quarto + Typst, which worked well and still does. Then `tynding` arrived and made the production side much leaner.
+
+If you are already in a Quarto workflow and teach a course with quantitative assessments, this is worth trying out. The parametrised approach is more interesting than it first sounds. `tynding` makes it practical even at larger class sizes.
+
+For now, that is it. Hope this was useful.
+
+Till next time, bye!! 👋
+
+## Disclaimer
+
+This post was drafted with the assistance of AI copy-editing tools. Any remaining errors are entirely my own.
