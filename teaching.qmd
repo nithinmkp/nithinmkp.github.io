@@ -13,9 +13,12 @@ My teaching spans undergraduate and postgraduate economics, with a focus on anal
 [Course materials](https://nithinmkp.github.io/eco2203-trade/)
 :::
 
+:::{.teaching-course}
 ### Econ 3209 Econometrics with Python
 
 [Course materials](https://nithinmkp.github.io/econ3209-kau/)
+
+:::
 :::
 
 ## 2025
