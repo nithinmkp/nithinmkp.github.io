@@ -56,6 +56,17 @@ Invited lecture introducing R for social science researchers.
 
 :::{.talk-list}
 :::{.talk-card}
+### Dynamic Documents Using Quarto and `purrr`
+
+**Kolkata useR Group**  
+*Virtual meetup, 13 September 2025*
+
+Talk on building dynamic documents with Quarto and the `purrr` package.
+
+[Slides](https://nithinmkp.github.io/kolkata-useR/) | [Materials](https://github.com/nithinmkp/kolkata-useR)
+:::
+
+:::{.talk-card}
 ### What Grad School Don't Teach You: Tools for Transparent and Reproducible Research
 
 **YSI-Economiga Monsoon School 2025**  

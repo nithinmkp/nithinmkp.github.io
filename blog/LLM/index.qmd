@@ -18,6 +18,7 @@ image: llm.png
 # Getting started
 
 We will use LLMs through HTTP APIs. 
+
 ```{r}
 #| echo: false
 r_pkgs <- c(

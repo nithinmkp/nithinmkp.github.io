@@ -10,12 +10,12 @@ My teaching spans undergraduate and postgraduate economics, with a focus on anal
 :::{.teaching-course}
 ### Econ 2203 International Trade and Policy in Agriculture
 
-:::{.teaching-meta}
-Currently offered
-:::
-
 [Course materials](https://nithinmkp.github.io/eco2203-trade/)
 :::
+
+### Econ 3209 Econometrics with Python
+
+[Course materials](https://nithinmkp.github.io/econ3209-kau/)
 :::
 
 ## 2025
@@ -23,6 +23,7 @@ Currently offered
 :::{.teaching-list}
 :::{.teaching-course}
 ### Econ 3209 Basic Econometrics
+
 :::
 
 :::{.teaching-course}

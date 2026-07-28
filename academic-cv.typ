@@ -1,291 +1,122 @@
-#let accent = rgb("#1a3a5c")
-#let light  = rgb("#4a6fa5")
-#let subtle = rgb("#666666")
-
-#set page(
-  paper: "a4",
-  margin: (x: 2.2cm, y: 2cm),
-)
-#set text(font: "Libertinus Serif", size: 10pt, lang: "en")
-#set par(justify: true, leading: 0.65em)
-
-// ── helpers ────────────────────────────────────────────────────────────────
-
-#let section(title) = {
-  v(0.9em)
-  text(weight: "bold", size: 10.5pt, fill: accent, upper(title))
-  v(0.15em)
-  line(length: 100%, stroke: 0.5pt + accent)
-  v(0.4em)
-}
-
-#let entry(left, right, body) = {
-  grid(
-    columns: (1fr, auto),
-    gutter: 0.5em,
-    text(weight: "semibold")[#left],
-    text(fill: subtle, size: 9pt)[#right],
-  )
-  body
-  v(0.4em)
-}
-
-#let pub(authors, year, title, venue) = {
-  pad(left: 1em)[
-    #authors (#year). #emph(title). #venue. \
-  ]
-}
-
-// ── header ─────────────────────────────────────────────────────────────────
+#set page(margin: (x: 1.6cm, y: 1.35cm))
+#set text(size: 10pt)
+#set par(justify: false, leading: 0.48em)
+#import "@preview/fontawesome:0.5.0": fa-icon
+#let accent = rgb("#1f4e79")
+#let accent-soft = rgb("#2f6aa3")
+#let rule-color = rgb("#8ea3b5")
+#show heading.where(level: 2): it => block(sticky: true)[
+  #v(0.35em)
+  #text(weight: "bold", tracking: 0.08em, fill: accent)[#smallcaps(it.body)]
+  #v(0.08em)
+  #line(length: 100%, stroke: (paint: rule-color, thickness: 0.45pt))
+  #v(0.12em)
+]
+#show link: set text(fill: accent-soft)
 
 #align(center)[
-  #text(size: 22pt, weight: "bold", fill: accent)[Nithin M]
-  #v(0.2em)
-  #text(size: 10.5pt, fill: light)[
-    Assistant Professor and Head · Department of Development Economics \
-    Kerala Agricultural University, Thrissur, Kerala
-  ]
-  #v(0.35em)
-  #text(size: 9.5pt, fill: subtle)[
-    #link("mailto:write2nithinm@gmail.com")[write2nithinm\@gmail.com] ·
-    +91 9447748013 ·
-    #link("https://nithinmkp.github.io")[nithinmkp.github.io] ·
-    ORCID: #link("https://orcid.org/0000-0002-0939-7927")[0000-0002-0939-7927]
-  ]
+  #text(size: 22pt, weight: "bold", tracking: 0.03em, fill: accent)[Nithin M]
 ]
 
-#v(0.5em)
-#line(length: 100%, stroke: 1pt + accent)
-
-// ── research interests ─────────────────────────────────────────────────────
-
-#section("Research Interests")
-
-Consumer sentiment and household expectations in emerging markets ·
-Macroeconomic transmission through the banking sector (NPAs, credit channels) ·
-Time poverty among vulnerable populations · Reproducible computational workflows
-
-// ── education ──────────────────────────────────────────────────────────────
-
-#section("Education")
-
-#entry(
-  [PhD in Economics · Indian Institute of Technology Kharagpur],
-  [2019 – present],
-)[
-  #text(fill: subtle)[Thesis: _Consumer Sentiments and Its Excess Sensitivity: Issues and Evidences_]
-  #linebreak()
-  Supervisor: Dr.\ Siddhartha Chattopadhyay · Examining heterogeneity in consumer expectations and its role in predicting household consumption.
+#align(center)[
+  #text(weight: "medium", fill: rgb("#444444"))[Department of Development Economics, Kerala Agricultural University, Thrissur, Kerala, India]
 ]
 
-#entry(
-  [MPhil in Economics · University of Hyderabad],
-  [2016 – 2018],
-)[
-  #text(fill: subtle)[Thesis: _Macroeconomic Shocks and NPAs in Indian SCBs: A Structural Financial Macroeconometric Model_ · CGPA 8.89/10]
+#align(center)[
+  #fa-icon("envelope", solid: true) #h(0.2em) #link("mailto:write2nithinm@gmail.com")[write2nithinm\@gmail.com]
+  #h(0.9em) #text(fill: rule-color)[|] #h(0.9em)
+  #fa-icon("phone", solid: true) #h(0.2em) +91 9447748013
 ]
 
-#entry(
-  [MA in Economics · Pondicherry University],
-  [2014 – 2016],
-)[
-  #text(fill: subtle)[Dissertation: _Assessing the Monetary Policy Stance of the Reserve Bank of India_ · CGPA 9.10/10]
+#align(center)[
+  #link("https://github.com/nithinmkp")[#fa-icon("github") #h(0.2em) GitHub]
+  #h(0.9em) #text(fill: rule-color)[|] #h(0.9em)
+  #link("https://www.linkedin.com/in/nithinmkp/")[#fa-icon("linkedin") #h(0.2em) LinkedIn]
+  #h(0.9em) #text(fill: rule-color)[|] #h(0.9em)
+  #link("https://scholar.google.co.in/citations?view_op=list_works&hl=en&hl=en&user=odIUzUUAAAAJ")[#fa-icon("graduation-cap", solid: true) #h(0.2em) Google Scholar]
+  #h(0.9em) #text(fill: rule-color)[|] #h(0.9em)
+  #link("https://orcid.org/0000-0002-0939-7927")[#fa-icon("orcid") #h(0.2em) ORCID]
 ]
 
-#entry(
-  [BSc (Hons) Cooperation and Banking · Kerala Agricultural University],
-  [2010 – 2014],
-)[
-  #text(fill: subtle)[Specialisation in Rural Banking and Finance Management · CGPA 8.14/10]
-]
+#v(0.1em)
+#line(length: 100%, stroke: (paint: accent, thickness: 0.8pt))
 
-// ── academic positions ─────────────────────────────────────────────────────
+== Current Position
 
-#section("Academic & Professional Positions")
+Assistant Professor and Head, Department of Development Economics, Kerala Agricultural University, Thrissur (May 2026 - Present)
 
-#entry(
-  [Assistant Professor and Head, Department of Development Economics],
-  [May 2026 – present],
-)[
-  #text(fill: subtle)[Kerala Agricultural University, Thrissur]
-]
+== Fields of Specialization
 
-#entry(
-  [Assistant Professor, Department of Development Economics],
-  [June 2025 – April 2026],
-)[
-  #text(fill: subtle)[Kerala Agricultural University, Thrissur · Teaching micro/macroeconomics and econometrics (UG and PG)]
-]
+Macroeconomics; Development Economics; Applied Econometrics; Consumer Sentiment and Household Consumption
 
-#entry(
-  [Research Assistant, Social Services Division],
-  [Jan 2024 – June 2025],
-)[
-  #text(fill: subtle)[Kerala State Planning Board, Government of Kerala · Annual Plans, Budget Statements, Economic Review; large-scale data analysis (DHS, NSSO) in R/Python]
-]
+== Education
 
-#entry(
-  [Research Assistant, Industrial and Infrastructure Division],
-  [Nov 2021 – Feb 2022],
-)[
-  #text(fill: subtle)[Kerala State Planning Board, Government of Kerala]
-]
+- *PhD in Economics* (2019 - Present), Indian Institute of Technology Kharagpur  
+  Thesis: _Consumer Sentiments and Its Excess Sensitivity: Issues and Evidences_
+- *M.Phil. in Economics* (2016 - 2018), University of Hyderabad, CGPA 8.89/10  
+  Thesis: _Macroeconomic Shocks and NPAs in Indian SCBs: A Structural Financial Macro Econometric Model_
+- *M.A. in Economics* (2014 - 2016), Pondicherry University, CGPA 9.10/10  
+  Dissertation: _Assessing the Monetary Policy Stance of the Reserve Bank of India_
+- *B.Sc. (Hons.) in Cooperation and Banking* (2010 - 2014), Kerala Agricultural University, Thrissur, CGPA 8.14/10
 
-#entry(
-  [Visiting Faculty · Sarla Anil Modi School of Economics, NMIMS Mumbai],
-  [Oct 2020 – Jan 2021],
-)[
-  #text(fill: subtle)[Advanced Microeconomics, Masters programme]
-]
+== Academic and Research Appointments
 
-#entry(
-  [Guest Faculty · Government College Kodancherry, University of Calicut],
-  [Oct 2018 – Jan 2019],
-)[
-  #text(fill: subtle)[Advanced Microeconomics, Masters and Bachelors programmes]
-]
+- Assistant Professor, Department of Development Economics, Kerala Agricultural University, Thrissur (June 2025 - April 2026)
+- Research Assistant, Kerala State Planning Board, Government of Kerala, Thiruvananthapuram (Jan 2024 - June 2025)
+- Research Assistant, Kerala State Planning Board, Government of Kerala, Thiruvananthapuram (Nov 2021 - Feb 2022)
+- Visiting Faculty, Sarla Anil Modi School of Economics, NMIMS, Mumbai (Oct 2020 - Jan 2021)
+- Guest Faculty, Government College Kodancherry, University of Calicut (Oct 2018 - Jan 2019)
 
-// ── publications ───────────────────────────────────────────────────────────
+== Publications
 
-#section("Publications")
+- Mani, N., Mishra, A. K., & Pandikasala, J. (2023). How serious is India's nonperforming assets crisis? A structural satellite version of the financial-macroeconometric model. _Asia-Pacific Financial Markets, 30_(4), 761-794. #link("https://doi.org/10.1007/s10690-023-09397-9")[doi:10.1007/s10690-023-09397-9]
+- Jijin, P., Mishra, A. K., & Nithin, M. (2022). Macroeconomic determinants of remittances to India. _Economic Change and Restructuring, 55_(2), 1229-1248.
+- Pandikasala, J., Vyas, I., & Mani, N. (2022). Do financial development drive remittances? _Journal of Public Affairs, 22_(1), e2269. #link("https://doi.org/10.1002/pa.2269")[doi:10.1002/pa.2269]
+- Nithin, M., Jijin, P., & Baiju, P. (2018). Has demonetisation pushed digitalisation in India? Some counter evidences. _Journal of Business Thought, 9_, 58-69. #link("https://doi.org/10.18311/jbt/2018/21170")[doi:10.18311/jbt/2018/21170]
 
-#pub(
-  [Mani, N., Mishra, A.K., & Pandikasala, J.],
-  [2023],
-  [How Serious is India's Nonperforming Assets Crisis? A Structural Satellite Version of the Financial-Macroeconometric Model],
-  [_Asia-Pacific Financial Markets_, 30(4), 761–794. https://doi.org/10.1007/s10690-023-09397-9],
-)
+== Working Papers
 
-#pub(
-  [Jijin, P., Mishra, A.K., & Nithin, M.],
-  [2022],
-  [Macroeconomic Determinants of Remittances to India],
-  [_Economic Change and Restructuring_, 55(2), 1229–1248],
-)
+- Does Sentiment Predict Consumption Growth of Indian Households? (with Siddhartha Chattopadhyay and Sohini Sahu)
+- Consumer Sentiments and Vulnerable Households: An Exploration
+- Time Poverty Among Educated Women: Analysis of Selected Indian States
 
-#pub(
-  [Pandikasala, J., Vyas, I., & Mani, N.],
-  [2022],
-  [Do Financial Development Drive Remittances? Empirical Evidence from India],
-  [_Journal of Public Affairs_, 22(1), e2269. https://doi.org/10.1002/pa.2269],
-)
+== Teaching Experience
 
-#pub(
-  [Nithin, M., Jijin, P., & Baiju, P.],
-  [2018],
-  [Has Demonetisation Pushed Digitalisation in India? Some Counter Evidences],
-  [_Journal of Business Thought_, 9, 58–69. https://doi.org/10.18311/jbt/2018/21170],
-)
+- Econ 2203 International Trade and Policy in Agriculture
+- Econ 3209 Basic Econometrics
+- Econ 501 Microeconomics
+- Econ 3107 Agribusiness Project Management
+- Econ 1101 Microeconomics
+- Advanced Microeconomics (NMIMS; Government College Kodancherry)
 
-// ── working papers ─────────────────────────────────────────────────────────
+== Invited Lectures and Conference/Workshop Talks (Selected)
 
-#section("Working Papers & Work in Progress")
+- Econtrix-26, Flame University and Economiga (3-5 January 2026)
+- Data Analysis using R, Kerala Economic Association and Inter University Centre for Alternative Economics, University of Kerala (25-29 August 2025)
+- Data Analysis using R (Hands-on Experience), Presidency University, Bangalore (2024)
+- Using R for Data Analysis, Central University of South Bihar (2022)
+- What Grad School Don't Teach You: Tools for Transparent and Reproducible Research, YSI-Economiga Monsoon School (2025)
+- Purrr, A Multipurpose Package, Boston R Users Group (2021)
+- A Sneak Peek into R for Economics, Economiga (2021)
 
-#entry(
-  [Does Sentiment Predict Consumption Growth of Indian Households?],
-  [Work in progress],
-)[
-  #text(fill: subtle)[With Dr.\ Siddhartha Chattopadhyay (IIT Kharagpur) and Dr.\ Sohini Sahu (IIT Kanpur). Presented at the 19th Annual Conference, ISI Delhi and at the Workshop on Open Economy Macroeconomics, CDS Thiruvananthapuram.]
-]
+== Training
 
-#entry(
-  [Consumer Sentiments and Vulnerable Households: An Exploration],
-  [Work in progress],
-)[
-  #text(fill: subtle)[With Dr.\ Siddhartha Chattopadhyay (IIT Kharagpur)]
-]
+- Summer Module Course 2021: _An Introduction to Macroeconomic Modeling and Estimation with Dynare_ (Workshop), Faculty of Business Management and Economics, University of Wurzburg, Germany (7 June 2021 - 11 June 2021), equivalent to 5 ECTS credit points.
+- Euro Area Business Cycle Network Training School (2021): Formulating and Estimating DSGE Models.
+- Euro Area Business Cycle Network Training School (2021): Business Cycle Measurement and Facts.
+- Workshop on Applied Financial Econometrics, University of Hyderabad (2016).
 
-#entry(
-  [Time Poverty Among Educated Women: Analysis of Selected Indian States],
-  [Draft],
-)[
-  #text(fill: subtle)[Supervising UG Honours Research Project (Shabna N., BSc Cooperation & Banking)]
-]
+== Awards and Fellowships
 
-// ── workshops & training ───────────────────────────────────────────────────
+- UGC Junior Research Fellowship (2019 - 2024)
+- noRth 2021 Scholarship, University of Minnesota
+- Appreciation certificate from the Reserve Bank of India for Financial Literacy (2013)
 
-#section("Workshops & Training")
+== Research and Technical Skills
 
-#entry(
-  [Macroeconomic Modelling with Dynare · University of Würzburg],
-  [2021],
-)[
-  #text(fill: subtle)[Five-day intensive workshop on formulating and estimating DSGE models using Dynare. Equivalent to 4 ECTS credit points.]
-]
-
-#entry(
-  [Euro Area Business Cycle Network (EABCN) Training School],
-  [2021],
-)[
-  #text(fill: subtle)[_Formulating and Estimating DSGE Models_ · _Business Cycle Measurement and Facts_ (remote)]
-]
-
-#entry(
-  [Workshop on Applied Financial Econometrics · University of Hyderabad],
-  [2016],
-)[
-  #text(fill: subtle)[School of Economics, University of Hyderabad]
-]
-
-// ── talks ──────────────────────────────────────────────────────────────────
-
-#section("Talks & Invited Lectures")
-
-#entry([Econtrix-26 · Flame University and Economiga], [Jan 2026])[
-  #text(fill: subtle)[Resource person: web scraping with R/Python and time series analysis using R]
-]
-
-#entry([Data Analysis using R · Kerala Economic Association & IUCAE, University of Kerala], [Aug 2025])[
-  #text(fill: subtle)[Invited resource person at five-day national workshop on data analysis using R]
-]
-
-#entry([What Grad School Don't Teach You · YSI-Economiga Monsoon School], [2025])[
-  #text(fill: subtle)[Session on reproducible research workflows using Git, Quarto, R, and Python. Also presented at KEA Conference 2025 pre-conference workshop.]
-]
-
-#entry([Data Analysis using R · Presidency University, Bangalore], [2024])[
-  #text(fill: subtle)[Faculty Development Program on Advanced Research Methodology and Data Analysis (online)]
-]
-
-#entry([Using R for Data Analysis · Central University of South Bihar, Gaya], [2022])[
-  #text(fill: subtle)[Invited lecture for social science researchers]
-]
-
-#entry([Purrr: A Multipurpose Package · Boston R Users Group], [2021])[
-  #text(fill: subtle)[Lightning talk on functional programming in R]
-]
-
-// ── awards ─────────────────────────────────────────────────────────────────
-
-#section("Awards & Fellowships")
-
-#entry([UGC Junior Research Fellowship], [2019 – 2024])[
-  #text(fill: subtle)[University Grants Commission fellowship for doctoral research at IIT Kharagpur]
-]
-
-#entry([noRth 2021 Scholarship · University of Minnesota], [2021])[
-  #text(fill: subtle)[One of four recipients selected to attend the noRth 2021 R conference]
-]
-
-#entry([RBI Appreciation Certificate · Reserve Bank of India], [2013])[
-  #text(fill: subtle)[Recognition for work in financial literacy]
-]
-
-// ── skills ─────────────────────────────────────────────────────────────────
-
-#section("Skills")
-
-#grid(
-  columns: (auto, 1fr),
-  gutter: (0.5em, 0.4em),
-  text(weight: "semibold")[Programming],   [R · Python · Julia · MATLAB],
-  text(weight: "semibold")[Econometrics],  [STATA · EViews · SPSS · Dynare],
-  text(weight: "semibold")[Markup],        [Typst · LaTeX · Quarto · Markdown · HTML/CSS],
-  text(weight: "semibold")[Infrastructure],[Git · GitHub Actions · CI/CD pipelines],
-  text(weight: "semibold")[Languages],     [English · Hindi · Malayalam],
-)
-
-#v(1fr)
-#align(right)[
-  #text(size: 8pt, fill: subtle)[Last updated: #datetime.today().display("[month repr:long] [year]")]
-]
+- Econometrics: Time series econometrics; panel data econometrics
+- Data: Large-scale survey and socio-economic datasets (including DHS and NSSO)
+- Programming: R, Python, Julia, MATLAB
+- Statistical software: Stata, EViews, SPSS
+- Reproducible research tools: Git, GitHub Actions, Quarto, LaTeX, Markdown, HTML/CSS
+- Languages: English, Hindi, Malayalam
